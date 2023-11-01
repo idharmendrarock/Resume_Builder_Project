@@ -10,15 +10,15 @@ const DataContextPro = (props) => {
   const personalData = useSelector(
     (state) => state.personalInfo.personalInfoValues
   );
-  
+
   const EducationData = useSelector((state) => state.eduDetail.eduDetails);
   const WExperienceData = useSelector((state) => state.workExp.workData);
-  const skillsData = useSelector((state)=> state.skills.skillDetails)
+  const skillsData = useSelector((state) => state.skills.skillDetails)
 
 
   // console.log(personalData.FirstName)
 
-  const SkillsPreloadedData ={
+  const SkillsPreloadedData = {
     keySkills: skillsData
   }
 
@@ -42,21 +42,21 @@ const DataContextPro = (props) => {
     Objective: personalData.Objective || "",
   };
 
-  
-  const EducationPreloadData ={
-    Type:EducationData.Type || '',
-    University:EducationData.University || '',
-    Degree:EducationData.Degree || '',
-    StartYear:EducationData.StartYear || '',
-    EndYear:EducationData.EndYear || '',
+
+  const EducationPreloadData = {
+    Type: EducationData.Type || '',
+    University: EducationData.University || '',
+    Degree: EducationData.Degree || '',
+    StartYear: EducationData.StartYear || '',
+    EndYear: EducationData.EndYear || '',
   }
 
   const [personalField, setPersonalField] = useState();
   const [educationField, setEducationField] = useState()
   const [workExpField, setWorkExpField] = useState()
   const [skillsField, setSkillsField] = useState()
-    const [resumeTemplate, setResumetemplate] = useState();
-  const [mode, setMode] = useState("light");
+  const [resumeTemplate, setResumetemplate] = useState();
+
 
   useEffect(() => {
     // Update personalField when personalData changes
@@ -70,23 +70,9 @@ const DataContextPro = (props) => {
 
     // Update skillsField when SkillsData changes
     setSkillsField(SkillsPreloadedData)
-  }, [personalData,EducationData, WExperienceData, skillsData ]);
+  }, [personalData, EducationData, WExperienceData, skillsData]);
 
-
-
-  // This ToggleMode function is used to Switch between light and dark Mode ****************************
-
-  // const ToggleMode = () => {
-  //   if (mode === "light") {
-  //     setMode("dark");
-  //     document.body.style.backgroundColor = "#072340";
-  //     document.body.style.color = "white";
-  //   } else {
-  //     setMode("light");
-  //     document.body.style.backgroundColor = "white";
-  //     document.body.style.color = "black";
-  //   }
-  // };
+  
 
   useEffect(() => {
     // Get data from local storage when the component mounts
@@ -107,8 +93,7 @@ const DataContextPro = (props) => {
 
   const contextValues = {
     addData,
-    resumeTemplate,    
-    mode,
+    resumeTemplate,
     personalField,
     setPersonalField,
     educationField,

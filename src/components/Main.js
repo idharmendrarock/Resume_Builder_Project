@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Typography, Box } from "@mui/material";
 import { TempImg } from "../data/Data";
-import TempGrid from "./TempGrid";
+import Home from "./Home";
 
 // Dashboard For Displaying  All Templates *********************************************
 
@@ -40,7 +40,7 @@ const Main = () => {
 				}}>
 				{TempImg &&
 					TempImg.map((img) => {
-						return <TempGrid img={img} key={img.id} />;
+						return <Home img={img} key={img.id} />;
 					})}
 			</Container>
 		</div>

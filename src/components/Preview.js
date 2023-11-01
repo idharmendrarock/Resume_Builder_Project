@@ -16,8 +16,7 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 const Preview = () => {
   const Navigate = useNavigate();
   const {
-    addData,
-    mode,
+    addData,    
     setPersonalField,
     setEducationField,
     setWorkExpField,
@@ -36,7 +35,7 @@ const Preview = () => {
     p: 4,
     zIndex: "200",
     borderRadius: "20px",
-    color: mode === "dark" && "black",
+    color: "black",
   };
 
   const PreviewResume = useSelector((state) => state.template.selectedTemplate);

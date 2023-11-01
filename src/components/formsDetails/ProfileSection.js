@@ -4,15 +4,15 @@ import Avatar from "react-avatar-edit";
 import { Box, Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { profileAction } from "../../Redux/Index";
-import profile from "../../Images/profile.png";
-import { useMyContext } from "../../context/Context";
+import profile from "../../Images/profile.jpg";
+
 
 const ProfileSection = () => {
   const dispatch = useDispatch();
   const [dialogs, setdialogs] = useState(false);
   const [imgCrop, setimgCrop] = useState(false);
   const [storeImage, setstoreImage] = useState(null);
-  const { mode } = useMyContext();
+ 
 
   // This Component Gives functionality of crop and upload selected image as profile picture **************
 
@@ -53,7 +53,7 @@ const ProfileSection = () => {
         sx={{
           height: "25px",
           mt: "10px",
-          color: mode === "light" ? "primary" : "white",
+          color: "primary",
         }}
       >
         Upload profile

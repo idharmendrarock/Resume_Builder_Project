@@ -13,7 +13,7 @@ const MediaIcons = (props) => {
       <Box sx={{ margin: "5px 10px" }}>
         <Link to={props.img.Link}>
           <img
-            style={{ width:'30px' }}
+            style={{ width: '30px' }}
             src={props.img.image}
             alt="IconImage"
           />
@@ -44,7 +44,7 @@ const AboutUs = () => {
               color="inherit"
               textTransform={"capitalize"}
             >
-              Welcome to our team! We are a group of five passionate individuals
+              Hello! This Is Our Resume Builder Project And Meet My Group Members.
               <Typography
                 sx={{
                   fontWeight: "bold",
@@ -54,14 +54,7 @@ const AboutUs = () => {
               >
                 DHARMENDRA, ASHOK AND PRACHI.
               </Typography>
-              who came together to turn our shared vision into reality. Our
-              journey began with a simple idea - to empower job seekers like you
-              with a user-friendly and fully responsive resume builder app.
-              Using the power of React, we've crafted an application that
-              simplifies the process of creating a standout resume.
-              <br />
-              Our aim : Empower job seekers with responsive, user-centric
-              resumes. Your success starts here. Happy resume crafting!🌟🚀📄
+              Resume Builder Offers Free, HR-Approved Resume Templates To Help You Create A Professional Resume In Minutes. Choose From Some Of The Selected Templates That Can Land You To Your Dream Job. Create An Account To Save Your Progress And Multiple Versions, Plus Download As A PDF. Resume Builder Offers Free,HR-Approved Resume Templates To Help You Create A Professional Resume In Minutes. Choose From Sever
             </Typography>
           </Grid>
           <Grid

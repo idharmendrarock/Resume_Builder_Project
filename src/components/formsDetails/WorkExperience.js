@@ -65,17 +65,17 @@ const WorkExperience = () => {
   const inputStyle = {
     width: {xs : '93%', sm: '47%'},
     m: 1,
-    backgroundColor: mode === "light" ? "white" : "#072340",
+    backgroundColor: "white",
     borderRadius: "10px",
     "& .MuiInputBase-input": {
-      color: mode === "light" ? "black" : "white",
+      color: "black",
     },
     "& label": {
-      color: mode === "light" ? "grey" : "white",
+      color: "grey",
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: mode === "light" ? "grey" : "white",
+        borderColor: "grey",
       },
     },
   };
@@ -122,7 +122,7 @@ const WorkExperience = () => {
               </Box>
               <Divider
                 sx={{
-                  backgroundColor: mode === "dark" && "rgb(151, 149, 149)",
+                  backgroundColor: "rgb(151, 149, 149)",
                   ml: "40px",
                   mb: "30px",
                   width: "88%",
@@ -170,7 +170,7 @@ const WorkExperience = () => {
               >
                 {Array.from({ length: currentYear - 1900 + 1 }, (_, index) => (
                   <option
-                    style={{ color: mode === "light" ? "black" : "black" }}
+                    style={{ color: "black"}}
                     key={index}
                     value={currentYear - index}
                   >
@@ -197,7 +197,7 @@ const WorkExperience = () => {
                   { length: currentYear - startYear + 1 },
                   (_, index) => (
                     <option
-                      style={{ color: mode === "light" ? "black" : "black" }}
+                      style={{ color: "black"}}
                       key={index}
                       value={startYear + index}
                     >
@@ -262,7 +262,7 @@ const WorkExperience = () => {
           </Button>
           <Button
             onClick={handleSubmit(onSubmit)}
-            disabled={!isDirty || !isValid}
+            // disabled={!isDirty || !isValid}
             variant="contained"
             sx={{ backgroundColor: "black", mt: "10px", fontWeight: "bold" }}
           >

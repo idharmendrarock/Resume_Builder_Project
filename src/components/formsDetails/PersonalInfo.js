@@ -11,7 +11,7 @@ import { useMyContext } from "../../context/Context";
 import "../../App.css";
 
 const PersonalInfo = () => {
-  const { mode, personalField } = useMyContext();
+  const {personalField } = useMyContext();
   const Navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const PersonalInfo = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty, isValid },
+    formState: { errors},
   } = useForm({ defaultValues: personalField });
 
   const onSubmit = (data) => {
@@ -34,17 +34,18 @@ const PersonalInfo = () => {
   const inputStyle = {
     width: {xs : '93%', sm: '47%'},
     m: 1,
-    backgroundColor: mode === "light" ? "white" : "#072340",
+    // marginBottom: "30px",
+    backgroundColor:"white",
     borderRadius: "10px",
     "& .MuiInputBase-input": {
-      color: mode === "light" ? "black" : "white",
+      color:"black",
     },
     "& label": {
-      color: mode === "light" ? "grey" : "white",
+      color:"grey",
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: mode === "light" ? "grey" : "white",
+        borderColor:"grey",
       },
     },
   };
@@ -55,16 +56,28 @@ const PersonalInfo = () => {
         container
         component="form"
         sx={{
-          width: "80%",
-          height: "auto",
+          
+          width: "700px",
+          height: "1000px",
+          padding: "20px",
+          boxShadow: 2,
+          alignItems: "center",
+          marginLeft: "600px",
+          Top: "50px",
+          position: "relative",
           m: 3,
           p: 3,
-          boxShadow: "0 0 20px 2px",
           textAlign: "center",
-          borderRadius: "10px",
-          marginTop: "50px",
-          backgroundColor: mode === "light" ? "White" : "#072340",
-          color: mode === "light" ? "black" : "white",
+          
+          
+
+          // width: "100%",
+          // height: "700px",
+          // boxShadow: "0 0 20px 2px",
+          // borderRadius: "10px",
+          // marginTop: "50px",                 
+          // backgroundColor: "White",
+          // color:"black",
         }}
       >
         <Box>
@@ -80,7 +93,7 @@ const PersonalInfo = () => {
             {...register("FirstName", { required: "first name is required!" })}
           />
           {errors.FirstName && (
-            <p style={{ color: "red" }}>{errors.FirstName.message}</p>
+            <p style={{ color: "red", marginTop: "-20px" }}>{errors.FirstName.message}</p>
           )}
 
           <TextField
@@ -96,7 +109,7 @@ const PersonalInfo = () => {
 
           <TextField
             sx={inputStyle}
-            label="Email"
+            label="Email"            
             type="text"
             varient="outlined"
             {...register("Email", { required: "email is required!" })}
@@ -177,7 +190,7 @@ const PersonalInfo = () => {
         )}
 
         <Button
-          disabled={!isDirty || !isValid}
+          
           onClick={handleSubmit(onSubmit)}
           type="submit"
           variant="contained"

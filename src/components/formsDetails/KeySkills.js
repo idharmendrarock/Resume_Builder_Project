@@ -43,17 +43,17 @@ const KeySkills = () => {
   const inputStyle = {
     width: "90%",
     m: 1,
-    backgroundColor: mode === "light" ? "white" : "#072340",
+    backgroundColor:"white",
     borderRadius: "10px",
     "& .MuiInputBase-input": {
-      color: mode === "light" ? "black" : "white",
+      color: "black",
     },
     "& label": {
-      color: mode === "light" ? "grey" : "white",
+      color: "grey",
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: mode === "light" ? "grey" : "white",
+        borderColor: "grey",
       },
     },
   };
@@ -93,7 +93,7 @@ const KeySkills = () => {
                   </Typography>
                   <Divider
                     sx={{
-                      backgroundColor: mode === "dark" && "rgb(151, 149, 149)",
+                      backgroundColor:"rgb(151, 149, 149)",
                       ml: "26px",
                       mb: "15px",
                       width: "88%",
@@ -153,7 +153,7 @@ const KeySkills = () => {
               Back
             </Button>
             <Button
-              disabled={!isDirty || !isValid}
+              // disabled={!isDirty || !isValid}
               onClick={handleSubmit(onSubmit)}
               variant="contained"
               sx={{ backgroundColor: "black", mt: "10px", fontWeight: "bold" }}

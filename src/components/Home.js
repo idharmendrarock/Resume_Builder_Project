@@ -9,7 +9,7 @@ import { setTemplateAction } from "../Redux/Index";
 
 //  This is tempGrid Box for displaying Designs of Different Tempalates**********************
 
-const TempGrid = (props) => {
+const Home = (props) => {
 	const { rTemp, id } = props.img;
 	const tempValues = { rTemp, id };
 
@@ -37,11 +37,12 @@ const TempGrid = (props) => {
 					position: "relative",
 					borderRadius: "10px",
 					margin: "20px 10px",
-				}}>
+				}}
+				>
 				<img
 					style={{
-						height: "300px",
-						width: "250px",
+						height: "365px",
+						width: "265px",
 						borderRadius: "10px",
 						boxShadow: "0px 0px 15px 3px grey",
 					}}
@@ -58,8 +59,8 @@ const TempGrid = (props) => {
 						sx={{
 							position: "absolute",
 							zIndex: "150",
-							top: "200px",
-							left: "47px",
+							top: "160px",
+							left: "65px",
 						}}
 						variant="contained">
 						Use Template
@@ -70,8 +71,8 @@ const TempGrid = (props) => {
 						sx={{
 							backgroundColor: "black",
 							zIndex: "100",
-							height: "300px",
-							width: "250px",
+							height: "365px",
+							width: "265px",
 							position: "absolute",
 							top: "0px",
 							opacity: ".5",
@@ -83,4 +84,4 @@ const TempGrid = (props) => {
 	);
 };
 
-export default TempGrid;
+export default Home;

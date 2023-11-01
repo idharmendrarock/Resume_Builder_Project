@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Box, Stack, Container } from "@mui/material";
+import { Box, Stack, Container, List, ListItemButton } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import PersonalInfo from "../formsDetails/PersonalInfo";
@@ -10,38 +10,44 @@ import KeySkills from "../formsDetails/KeySkills";
 import PersonIcon from "@mui/icons-material/Person";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import SchoolIcon from "@mui/icons-material/School";
-import BuildIcon from "@mui/icons-material/Build";
-import { useMyContext } from "../../context/Context";
+import AssignmentIcon from "@mui/icons-material/Assignment";
 
 // This DetailFilling component is used to displaying detailsfilling pages**********************
 
 const DetailsFilling = () => {
-  const { mode } = useMyContext();
-
   return (
     <div>
       <Container sx={{ display: { md: "flex" }, mt: "70px" }}>
         <Box
           sx={{
-            width: "300px",
+            width: "280px",
+            height: "260px",
             height: "auto",
             mr: { md: "5%" },
-            ml: { md: "0px" },
+            ml: { md: "0px", sm: "100px" },                       
           }}
         >
           <Stack
             sx={{
-              width: "300px",
-              height: "220px",
-              backgroundColor: { mode },
-              borderRadius: "10px",
+              // backgroundColor: { mode },
+              borderRadius: "20px",
               boxShadow: "0 0px 20px 2px ",
-              p: "20px",
+              padding: "20px",
               marginTop: "50px",
+              marginLeft: "-100px",             
             }}
           >
-            <ul className="ul-list">
-              <li className="list">
+            {/* <ul className="ul-list"> */}
+            <List
+              sx={{
+                borderRadius: "12px",
+                boxShadow: "0px 0px 5px 0.1px",
+                padding: "11px 3px",
+                fontWeight: "bold",
+                margin: "1px 5px",
+              }}
+            >
+              <ListItemButton>
                 <NavLink
                   to={"/details-filling-page/personal-details"}
                   style={{
@@ -50,14 +56,25 @@ const DetailsFilling = () => {
                     letterSpacing: 2,
                     display: "flex",
                     alignItems: "center",
-                    color: mode === "light" ? "black" : "white",
+                    color: "black",
                   }}
                 >
                   <PersonIcon sx={{ mr: "10px" }} />
                   Personal Details
                 </NavLink>
-              </li>
-              <li className="list">
+              </ListItemButton>
+            </List>
+
+            <List
+              sx={{
+                borderRadius: "12px",
+                boxShadow: "0px 0px 5px 0.1px",
+                padding: "0px 0px",
+                fontWeight: "bold",
+                margin: "8px 0px",
+              }}
+            >
+              <ListItemButton>
                 <NavLink
                   to={"/details-filling-page/education"}
                   style={{
@@ -66,14 +83,25 @@ const DetailsFilling = () => {
                     letterSpacing: 2,
                     display: "flex",
                     alignItems: "center",
-                    color: mode === "light" ? "black" : "white",
+                    color: "black",
                   }}
                 >
-                  <SchoolIcon sx={{ mr: "10px" }} />
+                  <SchoolIcon sx={{ margin: "10px" }} />
                   Education
                 </NavLink>
-              </li>
-              <li className="list">
+              </ListItemButton>
+            </List>
+
+            <List
+              sx={{
+                borderRadius: "12px",
+                boxShadow: "0px 0px 5px 0.1px",
+                padding: "0px 0px",
+                fontWeight: "bold",
+                margin: "2px 0px",
+              }}
+            >
+              <ListItemButton>
                 <NavLink
                   to={"/details-filling-page/work-experience"}
                   style={{
@@ -82,14 +110,26 @@ const DetailsFilling = () => {
                     letterSpacing: 2,
                     display: "flex",
                     alignItems: "center",
-                    color: mode === "light" ? "black" : "white",
+                    color: "black",
                   }}
                 >
-                  <WorkHistoryIcon sx={{ mr: "10px" }} />
+                  <WorkHistoryIcon sx={{ margin: "10px" }} />
                   Work Experience
                 </NavLink>
-              </li>
-              <li className="list">
+              </ListItemButton>
+            </List>
+
+            <List
+              sx={{
+                borderRadius: "12px",
+                boxShadow: "0px 0px 5px 0.1px",
+                padding: "0px 0px",
+                margin: "5px 0px",
+                fontWeight: "bold",
+                listStyleType: "none",
+              }}
+            >
+              <ListItemButton>
                 <NavLink
                   to={"/details-filling-page/key-skills"}
                   style={{
@@ -98,14 +138,14 @@ const DetailsFilling = () => {
                     letterSpacing: 2,
                     display: "flex",
                     alignItems: "center",
-                    color: mode === "light" ? "black" : "white",
+                    color: "black",
                   }}
                 >
-                  <BuildIcon sx={{ mr: "10px" }} />
+                  <AssignmentIcon sx={{ margin: "10px" }} />
                   Key Skills
                 </NavLink>
-              </li>
-            </ul>
+              </ListItemButton>
+            </List>
           </Stack>
         </Box>
 

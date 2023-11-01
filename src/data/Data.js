@@ -67,6 +67,6 @@ export const SocialMediaImg = [
 	{
 		id: 6,
 		image: require("./images/Github.png"),
-		Link: "https://github.com/himanshusinghsamant/react-resume-builder-project",
+		Link: "https://github.com/idharmendrarock/Resume_Builder_Project",
 	},
 ];

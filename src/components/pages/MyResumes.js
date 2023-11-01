@@ -18,7 +18,7 @@ const MyResumes = () => {
 
   const [downFileName, setDownFileName] = useState("");
 
-  const { resumeTemplate, mode } = useMyContext();
+  const { resumeTemplate} = useMyContext();
 
   // This handleDelete function to delete Saved  Resume******************************
 
@@ -54,17 +54,17 @@ const MyResumes = () => {
   // This input style object is used  to styling inputfield*******************************
 
   const inputStyle = {
-    backgroundColor: mode === "light" ? "white" : "#072340",
+    backgroundColor:  "white",
     borderRadius: "10px",
     "& .MuiInputBase-input": {
-      color: mode === "light" ? "black" : "white",
+      color: "black",
     },
     "& label": {
-      color: mode === "light" ? "grey" : "white",
+      color: "grey",
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: mode === "light" ? "grey" : "white",
+        borderColor:"grey",
       },
     },
   };
@@ -91,18 +91,18 @@ const MyResumes = () => {
               fontWeight: "bold",
             }}
           >
-            No Resume is created yet
+            😞Oops ! No any Resume....
           </Typography>
           <Typography
             subtitle1="h6"
             sx={{
-              color: "skyblue",
+              color: "blue",
               textTransform: "capitalize",
               fontWeight: "bold",
               marginTop: "30px",
             }}
           >
-            please select template and built resume.
+            You do not have any Resumes yet. Make One to view it here.            
           </Typography>
 
           {/* Link path To create New Resume from Dashboard ***********************************/}
@@ -113,23 +113,22 @@ const MyResumes = () => {
               Navigate("/");
             }}
             sx={{
-              color: "skyblue",
-              cursor: "pointer",
-              fontWeight: "bold",
+              color: "#c203fc",
+              cursor: "pointer",              
               marginTop: "20px",
             }}
           >
-            Click Here !
+            👉Click Here !👈
           </Typography>
-          <Box sx={{ mt: "10px" }}>
+          <Box sx={{ mt: "30px" }}>
             <img
               style={{
-                borderRadius: "50px",
-                boxShadow: mode === "dark" && "0px 0px 20px 5px grey",
-                width: mode === "light" ? "25vw" : "25vw",
+                borderRadius: "25px",
+                boxShadow: "0px 0px 50px 5px grey",
+                width: "65%",                
               }}
-              src="./images/image2.jpg"
-              alt="#"
+              src="./images/image2.png"
+              alt="No Any Resume"
             />
           </Box>
         </Container>
