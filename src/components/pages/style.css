@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Oxygen&family=Poppins:wght@600&family=Teko:wght@300&family=Ubuntu:wght@400;500&display=swap");
+
+
+
+
+.active {
+	
+	font-size: 1.2rem;
+	/* color:white; */
+	-webkit-text-fill-color: rgb(1, 37, 244);
+	text-shadow: 0.5px 0.5px 0.5px  #0040ff;
+	transition: 0.5s ease-in-out;
+}
+
+.ul-list {
+	list-style-type: none;
+	margin-right: 30px;
+}
+
+.list {
+	/* font-family: 'Ubuntu', sans-serif; */
+	font-family: "Noto Serif", serif;
+	/* font-family: 'Bubblegum Sans', cursive; */
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px 0.1px;
+	padding: 5px 10px;
+	margin: 10px 0px;
+}
+
+
+
+
+@media screen and ( min-width:0px) and (max-width:1083px) {
+	.dwnresponsive{
+	   position: unset;
+	   margin-top: 520px;
+	   margin-left: 120px;
+	   margin-right: -20px;
+	}
+}	
