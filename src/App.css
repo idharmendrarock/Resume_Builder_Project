@@ -6,12 +6,13 @@
 
 @media screen and (min-width: 0px) and (max-width:600px) {
   .Responsive {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    width: 70%;
+    display: flex;    
+    flex-direction: column;        
   }
   .input-field{
-    width: 500px;
+    width: auto;
+    margin-left: 50px;
   }
 }
 
@@ -19,7 +20,7 @@
   .btnresponsive {
     position: unset;
     margin-top: 500px;
-    margin-left: 120px;
+    margin-left: 500px;
   }
 }
 

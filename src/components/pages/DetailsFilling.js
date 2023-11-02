@@ -44,10 +44,10 @@ const DetailsFilling = () => {
                 boxShadow: "0px 0px 5px 0.1px",
                 padding: "11px 3px",
                 fontWeight: "bold",
-                margin: "1px 5px",
+                margin: "1px 3px",
               }}
             >
-              <ListItemButton>
+              <ListItemButton >
                 <NavLink
                   to={"/details-filling-page/personal-details"}
                   style={{
