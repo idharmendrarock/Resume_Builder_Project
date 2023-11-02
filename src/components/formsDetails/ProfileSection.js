@@ -45,7 +45,7 @@ const ProfileSection = () => {
           objectFit: "cover",
         }}
         src={imgCrop ? storeImage : profile}
-        alt="Profile-img"
+        alt="NO Image"
       />
       <Button
         onClick={() => setdialogs(true)}
