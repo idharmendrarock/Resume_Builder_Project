@@ -10,14 +10,13 @@ import { useNavigate } from "react-router-dom";
 import { useMyContext } from "../../context/Context";
 
 const KeySkills = () => {
-  const { mode, skillsField } = useMyContext();
+  const { skillsField } = useMyContext();
   const Navigate = useNavigate();
   const dispatch = useDispatch();
 
   const {
     register,
     handleSubmit,
-    formState: { isDirty, isValid },
     control,
   } = useForm({
     defaultValues: skillsField
@@ -38,26 +37,6 @@ const KeySkills = () => {
     Navigate("/preview");
   };
 
-  // This input style object is used  to styling inputfield*******************************
-
-  const inputStyle = {
-    width: "90%",
-    m: 1,
-    backgroundColor:"white",
-    borderRadius: "10px",
-    "& .MuiInputBase-input": {
-      color: "black",
-    },
-    "& label": {
-      color: "grey",
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "grey",
-      },
-    },
-  };
-
   return (
     <div className="keyResponsive">
       <div>
@@ -66,13 +45,15 @@ const KeySkills = () => {
             container
             component="form"
             sx={{
-              width: "80%",
+              width: "800px",
               height: "auto",
-              m: 3,
-              p: 3,
-              boxShadow: "0 0 20px 1px",
-              textAlign: "center",
+              padding: "10px",
+              boxShadow: 2,
               borderRadius: "10px",
+              marginLeft: "900px",
+              m: "20px",
+              boxShadow: "0 0 20px 2px",
+              textAlign: "center",
               marginTop: "50px",
             }}
           >
@@ -93,7 +74,7 @@ const KeySkills = () => {
                   </Typography>
                   <Divider
                     sx={{
-                      backgroundColor:"rgb(151, 149, 149)",
+                      backgroundColor: "rgb(151, 149, 149)",
                       ml: "26px",
                       mb: "15px",
                       width: "88%",
@@ -103,11 +84,10 @@ const KeySkills = () => {
                     label="Addskills"
                     type="text"
                     varient="outlined"
-                    sx={inputStyle}
+                    sx={{ width: "35%", margin: "20px" }}
                     {...register(`keySkills.${index}.skills`)}
-                    required
-                  />
-
+                    required                    
+                  />                  
                   {index > 0 && (
                     <Button
                       sx={{ margin: "20px 0px 30px 0px" }}
@@ -133,7 +113,7 @@ const KeySkills = () => {
             </Box>
             <Divider
               sx={{
-                backgroundColor: mode === "dark" && "rgb(151, 149, 149)",
+                backgroundColor: "dark",
                 ml: "26px",
                 mb: "30px",
                 width: "88%",
@@ -147,13 +127,12 @@ const KeySkills = () => {
                 backgroundColor: "black",
                 mt: "10px",
                 fontWeight: "bold",
-                mr: "10px",
+                mr: "50px",
               }}
             >
               Back
             </Button>
             <Button
-              // disabled={!isDirty || !isValid}
               onClick={handleSubmit(onSubmit)}
               variant="contained"
               sx={{ backgroundColor: "black", mt: "10px", fontWeight: "bold" }}

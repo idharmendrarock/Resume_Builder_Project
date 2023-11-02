@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Divider, Typography } from "@mui/material";
+import { Button, Divider, Grid, Typography } from "@mui/material";
 import { TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import { useDispatch } from "react-redux";
@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { useMyContext } from "../../context/Context";
 
 const WorkExperience = () => {
-  const { mode, workExpField } = useMyContext();
+  const { workExpField } = useMyContext();
 
   const currentYear = new Date().getFullYear();
   const [startYear, setStartYear] = useState(currentYear);
@@ -41,7 +41,7 @@ const WorkExperience = () => {
     control,
     register,
     handleSubmit,
-    formState: { errors, isDirty, isValid },
+    formState: { errors },
   } = useForm({
     defaultValues: workExpField,
   });
@@ -60,25 +60,6 @@ const WorkExperience = () => {
     Navigate("/details-filling-page/key-skills");
   };
 
-  // This input style object is used  to styling inputfield*******************************
-
-  const inputStyle = {
-    width: {xs : '93%', sm: '47%'},
-    m: 1,
-    backgroundColor: "white",
-    borderRadius: "10px",
-    "& .MuiInputBase-input": {
-      color: "black",
-    },
-    "& label": {
-      color: "grey",
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "grey",
-      },
-    },
-  };
 
   return (
     <div>
@@ -87,13 +68,15 @@ const WorkExperience = () => {
           container
           component="form"
           sx={{
-            width:{xs:'80%', sm:'80%', md:'80%', lg:'100%'},
+            width: "800px",
             height: "auto",
-            m: 3,
-            p: 3,
-            boxShadow: "0 0 20px 1px",
-            textAlign: "center",
+            padding: "10px",
+            boxShadow: 2,
             borderRadius: "10px",
+            marginLeft: "900px",            
+            m: "20px",            
+            boxShadow: "0 0 20px 2px",
+            textAlign: "center",
             marginTop: "50px",
           }}
         >
@@ -128,87 +111,99 @@ const WorkExperience = () => {
                   width: "88%",
                 }}
               />
-
-              <TextField
-                sx={inputStyle}
-                label="JobTitle"
-                type="text"
-                varient="outlined"
-                {...register(`WorkExperience[${index}].JobTitle`, {
-                  required: "This Field is required!",
-                })}
-              />
-              {errors.JobTitle && (
-                <p style={{ color: "red" }}>{errors.JobTitle.message}</p>
-              )}
-
-              <TextField
-                sx={inputStyle}
-                label="OrganizationName"
-                type="text"
-                varient="outlined"
-                {...register(`WorkExperience[${index}].OrganizationName`, {
-                  required: "This Field is required!",
-                })}
-              />
-              {errors.OrganizationName && (
-                <p style={{ color: "red" }}>
-                  {errors.OrganizationName.message}
-                </p>
-              )}
-              <TextField
-                sx={inputStyle}
-                label="StartYear"
-                type="number"
-                varient="outlined"
-                {...register(`WorkExperience[${index}].StartYear`, {
-                  required: "This Field is required!",
-                })}
-                onChange={handleStartYearChange}
-                select
-                SelectProps={{ native: true }}
+              <Grid className="Responsive" container
               >
-                {Array.from({ length: currentYear - 1900 + 1 }, (_, index) => (
-                  <option
-                    style={{ color: "black"}}
-                    key={index}
-                    value={currentYear - index}
+                <Grid item xs={12} sm={6} >
+                  <TextField
+                    label="JobTitle"
+                    type="text"
+                    varient="outlined"
+                    sx={{ width: "90%", margin: "20px" }}
+                    {...register(`WorkExperience[${index}].JobTitle`, {
+                      required: "This Field is required!",
+                    })}
+                  />
+                  {errors.JobTitle && (
+                    <p style={{ color: "red" }}>{errors.JobTitle.message}</p>
+                  )}
+                </Grid>
+
+                <Grid item xs={12} sm={6} >
+                  <TextField
+                    label="OrganizationName"
+                    type="text"
+                    varient="outlined"
+                    sx={{ width: "90%", margin: "20px" }}
+                    {...register(`WorkExperience[${index}].OrganizationName`, {
+                      required: "This Field is required!",
+                    })}
+                  />
+                  {errors.OrganizationName && (
+                    <p style={{ color: "red" }}>
+                      {errors.OrganizationName.message}
+                    </p>
+                  )}
+                </Grid>
+
+                <Grid item xs={12} sm={6} >
+                  <TextField
+                    label="StartYear"
+                    type="number"
+                    varient="outlined"
+                    sx={{ width: "90%", margin: "20px" }}
+                    {...register(`WorkExperience[${index}].StartYear`, {
+                      required: "This Field is required!",
+                    })}
+                    onChange={handleStartYearChange}
+                    select
+                    SelectProps={{ native: true }}
                   >
-                    {currentYear - index}
-                  </option>
-                ))}
-              </TextField>
-              {errors.StartYear && (
-                <p style={{ color: "red" }}>{errors.StartYear.message}</p>
-              )}
-              <TextField
-                sx={inputStyle}
-                label="EndYear"
-                type="number"
-                varient="outlined"
-                {...register(`WorkExperience[${index}].EndYear`, {
-                  required: "This Field is required!",
-                })}
-                onChange={handleEndYearChange}
-                select
-                SelectProps={{ native: true }}
-              >
-                {Array.from(
-                  { length: currentYear - startYear + 1 },
-                  (_, index) => (
-                    <option
-                      style={{ color: "black"}}
-                      key={index}
-                      value={startYear + index}
-                    >
-                      {startYear + index}
-                    </option>
-                  )
-                )}
-              </TextField>
-              {errors.EndYear && (
-                <p style={{ color: "red" }}>{errors.EndYear.message}</p>
-              )}
+                    {Array.from({ length: currentYear - 1900 + 1 }, (_, index) => (
+                      <option
+                        style={{ color: "black" }}
+                        key={index}
+                        value={currentYear - index}
+                      >
+                        {currentYear - index}
+                      </option>
+                    ))}
+                  </TextField>
+                  {errors.StartYear && (
+                    <p style={{ color: "red" }}>{errors.StartYear.message}</p>
+                  )}
+                </Grid>
+
+                <Grid item xs={12} sm={6} >
+                  <TextField
+                    label="EndYear"
+                    type="number"
+                    varient="outlined"
+                    sx={{ width: "90%", margin: "20px" }}
+                    {...register(`WorkExperience[${index}].EndYear`, {
+                      required: "This Field is required!",
+                    })}
+                    onChange={handleEndYearChange}
+                    select
+                    SelectProps={{ native: true }}
+                  >
+                    {Array.from(
+                      { length: currentYear - startYear + 1 },
+                      (_, index) => (
+                        <option
+                          style={{ color: "black" }}
+                          key={index}
+                          value={startYear + index}
+                        >
+                          {startYear + index}
+                        </option>
+                      )
+                    )}
+                  </TextField>
+                  {errors.EndYear && (
+                    <p style={{ color: "red" }}>{errors.EndYear.message}</p>
+                  )}
+                </Grid>
+              </Grid>
               {index > 0 && (
                 <Button
                   sx={{ margin: "20px 0px 30px 0px" }}
@@ -242,7 +237,7 @@ const WorkExperience = () => {
 
           <Divider
             sx={{
-              backgroundColor: mode === "dark" && "rgb(151, 149, 149)",
+              backgroundColor: "dark",
               ml: "40px",
               mb: "30px",
               width: "88%",
@@ -255,14 +250,13 @@ const WorkExperience = () => {
               backgroundColor: "black",
               mt: "10px",
               fontWeight: "bold",
-              mr: "10px",
+              mr: "50px",
             }}
           >
             Back
           </Button>
           <Button
             onClick={handleSubmit(onSubmit)}
-            // disabled={!isDirty || !isValid}
             variant="contained"
             sx={{ backgroundColor: "black", mt: "10px", fontWeight: "bold" }}
           >

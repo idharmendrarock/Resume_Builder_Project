@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import { Button, Divider, Typography } from "@mui/material";
+import { Button, Divider, Grid, Typography } from "@mui/material";
 import { TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import { useForm } from "react-hook-form";
 import { educationDetailsAction } from "../../Redux/Index";
 import { useDispatch } from "react-redux";
-// import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useMyContext } from "../../context/Context";
 
 const Education = () => {
-  const {educationField } = useMyContext();
+  const { educationField } = useMyContext();
   const currentYear = new Date().getFullYear();
   const [startYear, setStartYear] = useState(currentYear);
   const [endYear, setEndYear] = useState(currentYear);
@@ -38,18 +37,12 @@ const Education = () => {
   const dispatch = useDispatch();
   const Navigate = useNavigate();
 
-  // const preloadedData ={
-  //   Type:EducationDetails.Type || '',
-  //   University:EducationDetails.University || '',
-  //   Degree:EducationDetails.Degree || '',
-  //   StartYear:EducationDetails.StartYear || '',
-  //   EndYear:EducationDetails.EndYear || '',
-  // }
+
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty, isValid },
+    formState: { errors }
   } = useForm({
     defaultValues: educationField,
   });
@@ -62,25 +55,7 @@ const Education = () => {
     Navigate("/details-filling-page/work-experience");
   };
 
-  // This input style object is used  to styling inputfield*******************************
 
-  const inputStyle = {
-    width: {xs : '93%', sm: '47%'},
-    m: 1,
-    backgroundColor: "white",
-    borderRadius: "10px",
-    "& .MuiInputBase-input": {
-      color: "black",
-    },
-    "& label": {
-      color: "grey",
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "grey",
-      },
-    },
-  };
 
   return (
     <div>
@@ -89,14 +64,17 @@ const Education = () => {
           container
           component="form"
           sx={{
-            width: "80%",
+            width: "800px",
             height: "auto",
-            m: 3,
-            p: 3,
-            boxShadow: "0 0 20px 0.1px",
-            textAlign: "center",
+            padding: "10px",
+            boxShadow: 2,
             borderRadius: "10px",
-            marginTop: "50px",
+            marginLeft: "900px",            
+            m: "20px",            
+            boxShadow: "0 0 20px 2px",
+            textAlign: "center",
+            marginTop: "50px",       
+            
           }}
         >
           <Typography
@@ -125,98 +103,115 @@ const Education = () => {
                 width: "88%",
               }}
             />
-            <TextField
-              sx={inputStyle}
-              label="Type "
-              type="text"
-              variant="outlined"
-              {...register("Type", {
-                required: "This Field is required!",
-              })}
-            />
-            {errors.Type && (
-              <p style={{ color: "red" }}>{errors.Type.message}</p>
-            )}
 
-            <TextField
-              sx={inputStyle}
-              label="University "
-              type="text"
-              variant="outlined"
-              {...register("University", {
-                required: "This Field is required!",
-              })}
-            />
-            {errors.University && (
-              <p style={{ color: "red" }}>{errors.University.message}</p>
-            )}
-            <TextField
-              sx={inputStyle}
-              label="Degree"
-              type="text"
-              variant="outlined"
-              {...register("Degree", {
-                required: "This Field is required!",
-              })}
-            />
-            {errors.Degree && (
-              <p style={{ color: "red" }}>{errors.Degree.message}</p>
-            )}
-            <TextField
-              sx={inputStyle}
-              label="StartYear"
-              type="number"
-              variant="outlined"
-              {...register("StartYear", {
-                required: "This Field is required!",
-              })}
-              onChange={handleStartYearChange}
-              select
-              SelectProps={{ native: true }}
+            <Grid className="Responsive" container
             >
-              {Array.from({ length: currentYear - 1900 + 1 }, (_, index) => (
-                <option
-                  style={{ color:"black"}}
-                  key={index}
-                  value={currentYear - index}
+              <Grid item xs={12} sm={6} >
+                <TextField
+                  label="Type "
+                  type="text"
+                  variant="outlined"
+                  sx={{ width: "90%", margin: "20px" }}
+                  {...register("Type", {
+                    required: "This Field is required!",
+                  })}
+                />
+                {errors.Type && (
+                  <p style={{ color: "red" }}>{errors.Type.message}</p>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={6} >
+                <TextField
+                  label="University "
+                  type="text"
+                  variant="outlined"
+                  sx={{ width: "90%", margin: "20px" }}
+                  {...register("University", {
+                    required: "This Field is required!",
+                  })}
+                />
+                {errors.University && (
+                  <p style={{ color: "red" }}>{errors.University.message}</p>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={6} >
+                <TextField
+                  label="Degree"
+                  type="text"
+                  variant="outlined"
+                  sx={{ width: "90%", margin: "20px" }}
+                  {...register("Degree", {
+                    required: "This Field is required!",
+                  })}
+                />
+                {errors.Degree && (
+                  <p style={{ color: "red" }}>{errors.Degree.message}</p>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={6} >
+                <TextField
+                  label="StartYear"
+                  type="number"
+                  variant="outlined"
+                  sx={{ width: "90%", margin: "20px" }}
+                  {...register("StartYear", {
+                    required: "This Field is required!",
+                  })}
+                  onChange={handleStartYearChange}
+                  select
+                  SelectProps={{ native: true }}
                 >
-                  {currentYear - index}
-                </option>
-              ))}
-            </TextField>
+                  {Array.from({ length: currentYear - 1900 + 1 }, (_, index) => (
+                    <option
+                      style={{ color: "black" }}
+                      key={index}
+                      value={currentYear - index}
+                    >
+                      {currentYear - index}
+                    </option>
+                  ))}
+                </TextField>
 
-            {errors.StartYear && (
-              <p style={{ color: "red" }}>{errors.StartYear.message}</p>
-            )}
-            <TextField
-              sx={inputStyle}
-              label="EndYear"
-              type="number"
-              variant="outlined"
-              {...register("EndYear", {
-                required: "This Field is required",
-              })}
-              onChange={handleEndYearChange}
-              select
-              SelectProps={{ native: true }}
-            >
-              {Array.from(
-                { length: currentYear - startYear + 1 },
-                (_, index) => (
-                  <option
-                    style={{ color: "black"}}
-                    key={index}
-                    value={startYear + index}
-                  >
-                    {startYear + index}
-                  </option>
-                )
-              )}
-            </TextField>
+                {errors.StartYear && (
+                  <p style={{ color: "red" }}>{errors.StartYear.message}</p>
+                )}
+              </Grid>
 
-            {errors.EndYear && (
-              <p style={{ color: "red" }}>{errors.EndYear.message}</p>
-            )}
+              <Grid item xs={12} sm={12} >
+                <TextField
+                  label="EndYear"
+                  type="number"
+                  variant="outlined"
+                  sx={{ width: "50%", margin: "20px" }}
+                  {...register("EndYear", {
+                    required: "This Field is required",
+                  })}
+                  onChange={handleEndYearChange}
+                  select
+                  SelectProps={{ native: true }}
+                >
+                  {Array.from(
+                    { length: currentYear - startYear + 0 },
+                    (_, index) => (
+                      <option
+                        style={{ color: "black" }}
+                        key={index}
+                        value={startYear + index}
+                      >
+                        {startYear + index}
+                      </option>
+                    )
+                  )}
+                </TextField>
+
+                {errors.EndYear && (
+                  <p style={{ color: "red" }}>{errors.EndYear.message}</p>
+                )}
+              </Grid>
+            </Grid>
           </div>
 
           <Divider
@@ -235,13 +230,12 @@ const Education = () => {
               backgroundColor: "black",
               mt: "10px",
               fontWeight: "bold",
-              mr: "10px",
+              mr: "50px",
             }}
           >
             Back
           </Button>
-          <Button
-            // disabled={!isDirty || !isValid}
+          <Button            
             onClick={handleSubmit(onSubmit)}
             variant="contained"
             sx={{ backgroundColor: "black", mt: "10px", fontWeight: "bold" }}

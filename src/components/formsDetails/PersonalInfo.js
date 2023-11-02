@@ -1,4 +1,4 @@
-import { Button, FormControl, FormGroup, Grid, MenuItem, Stack } from "@mui/material";
+import { Button, Grid, MenuItem } from "@mui/material";
 import { TextField, InputAdornment } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
@@ -227,17 +227,16 @@ const PersonalInfo = () => {
       <Box
         component="form"
         sx={{
-          width: "900px",
+          width: "800px",
           height: "auto",
           padding: "10px",
           boxShadow: 2,
           borderRadius: "10px",
-          marginLeft: "900px",
-          // Top: "100px",
-          m: "20px",
-          p: 3,
+          marginLeft: "900px",            
+          m: "20px",            
           boxShadow: "0 0 20px 2px",
           textAlign: "center",
+          marginTop: "50px",
         }}
       >
         <Box>
@@ -249,7 +248,7 @@ const PersonalInfo = () => {
             <TextField
               className="input-field"
               label="FirstName"
-              sx={{ width: "300px", margin: "20px" }}
+              sx={{ width: "90%", margin: "20px" }}
               type="text"
               varient="outlined"
               {...register("FirstName")}
@@ -261,7 +260,7 @@ const PersonalInfo = () => {
 
           <Grid item xs={12} sm={6}>
             <TextField
-              sx={{ width: "300px", margin: "20px" }}
+              sx={{ width: "90%", margin: "20px" }}
               label="LastName"
               type="text"
               varient="outlined"
@@ -274,7 +273,7 @@ const PersonalInfo = () => {
 
           <Grid item xs={12} sm={6}>
             <TextField
-              sx={{ width: "300px", margin: "20px" }}
+              sx={{ width: "90%", margin: "20px" }}
               label="Email"
               type="text"
               varient="outlined"
@@ -287,7 +286,7 @@ const PersonalInfo = () => {
 
           <Grid item xs={12} sm={6}>
             <TextField
-              sx={{ width: "300px", margin: "20px" }}
+              sx={{ width: "90%", margin: "20px" }}
               label="MobileNo"
               type="number"
               varient="outlined"
@@ -304,7 +303,7 @@ const PersonalInfo = () => {
 
           <Grid item xs={12} sm={6}>
             <TextField
-              sx={{ width: "300px", margin: "20px" }}
+              sx={{ width: "90%", margin: "20px" }}
               label="Address"
               type="text"
               varient="outlined"
@@ -316,7 +315,7 @@ const PersonalInfo = () => {
 
           <Grid item xs={12} sm={6}>
             <TextField
-              sx={{ width: "300px", margin: "20px" }}
+              sx={{ width: "90%", margin: "20px" }}
               label="City"
               type="text"
               varient="outlined"
@@ -331,7 +330,7 @@ const PersonalInfo = () => {
               id="outlined-select-states"
               select
               type="Select"
-              sx={{ width: "300px", margin: "20px", }}
+              sx={{ width: "90%", margin: "20px" }}
               label="State"
               varient="outlined"
               {...register("State")}
@@ -348,7 +347,7 @@ const PersonalInfo = () => {
 
           <Grid item xs={12} sm={6}>
             <TextField
-              sx={{ width: "300px", margin: "20px" }}
+              sx={{ width: "90%", margin: "20px" }}
               label="PinCode"
               type="number"
               varient="outlined"
@@ -361,7 +360,7 @@ const PersonalInfo = () => {
           <Grid item xs={12} sm={12}>
             <TextField
 
-              sx={{ width: "300px", margin: "20px" }}
+              sx={{ width: "90%", margin: "20px" }}
               label="Objective"
               type="text"
               varient="outlined"
