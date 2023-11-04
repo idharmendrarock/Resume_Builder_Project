@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 const Template_3 = () => {
   //  In this Section We are Getting all data with the help  of useSelector which is stored in redux store like personalInfo Data , EducationData , WorkExperienceData and KeyskillData **************
 
- 
+
   const PersonalInfoData = useSelector(
     (state) => state.personalInfo.personalInfoValues
   );
@@ -63,8 +63,8 @@ const Template_3 = () => {
             >
               <Stack
                 sx={{
-                  width: "150%",
-                  height: 90,
+                  width: "auto",
+                  height: "100%",
                   borderRadius: "50%",
                   backgroundColor: "white",
                   display: "flex",

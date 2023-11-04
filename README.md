@@ -10,7 +10,7 @@
 
 ## Introduction
 
-Welcome to the Resume Builder Website project! This project is developed by Kundan, Prasad, Himanshu, and Pragati to provide a user-friendly platform for creating and managing resumes. Whether you are a job seeker or someone helping others build their resumes, our website aims to streamline the process and make it more efficient.
+Welcome to the Resume Builder Website project! This project is developed by Dharmendra Ashok and Prachi to provide a user-friendly platform for creating and managing resumes. Whether you are a job seeker or someone helping others build their resumes, our website aims to streamline the process and make it more efficient.
 
 ## Features
 
@@ -35,7 +35,7 @@ Follow these instructions to set up and run the project on your local machine.:
 1. **Clone the Repository**: Clone this repository to your local machine.
 
    bash
-   [https://github.com/your-username/resume-builder-app.git](https://github.com/himanshusinghsamant/react-resume-builder-project.git)
+   [https://github.com/your-username/resume-builder-app.git](https://github.com/idharmendrarock/Resume_Builder_Project.git)
 
 2. **Installation**: Navigate to the project directory and install the required dependencies.
 
@@ -56,8 +56,8 @@ npm install
 ## Contributing
 
 - **Dharmendra ([GitHub Profile](https://github.com/idhamrendrarock))**
-- **Ashok ([GitHub Profile](https://github.com/ashok))**
-- **Prachi ([GitHub Profile](https://github.com/prachi))**
+- **Ashok ([GitHub Profile](#))**
+- **Prachi ([GitHub Profile](#))**
 
 
 -**Thank you for choosing our Resume Builder Website.** 

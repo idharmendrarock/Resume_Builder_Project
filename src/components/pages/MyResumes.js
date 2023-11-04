@@ -82,24 +82,26 @@ const MyResumes = () => {
           }}
         >
           <Typography
-            variant="h5"
+            variant="h4"
             sx={{
               color: "red",
-              marginTop: "100px",
-              textAlign: "center",
-              textTransform: "uppercase",
+              marginTop: "85px",
+              textAlign: "center",              
               fontWeight: "bold",
+              
             }}
+            
           >
-            😞Oops ! No any Resume....
+            😞Oops ! <p style={{marginLeft: "60px", fontSize: "1.6rem"}}>No any Resume....</p>
           </Typography>
+          
           <Typography
             subtitle1="h6"
             sx={{
               color: "blue",
               textTransform: "capitalize",
               fontWeight: "bold",
-              marginTop: "30px",
+              marginTop: "20px",              
             }}
           >
             You do not have any Resumes yet. Make One to view it here.            
@@ -113,9 +115,10 @@ const MyResumes = () => {
               Navigate("/");
             }}
             sx={{
-              color: "#c203fc",
+              color: "#cc0099",
               cursor: "pointer",              
               marginTop: "20px",
+              textDecoration: "underline",                        
             }}
           >
             👉Click Here !👈
@@ -124,10 +127,11 @@ const MyResumes = () => {
             <img
               style={{
                 borderRadius: "25px",
-                boxShadow: "0px 0px 50px 5px grey",
-                width: "65%",                
+                // boxShadow: "0px 0px 5px 1px grey",
+                width: "60%", 
+                height: "400px"
               }}
-              src="./images/image2.png"
+              src="./images/MyResume.png"
               alt="No Any Resume"
             />
           </Box>

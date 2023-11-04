@@ -3,6 +3,7 @@ import { Grid, Typography, Container } from "@mui/material";
 import { Box } from "@mui/system";
 import { SocialMediaImg } from "../../data/Data";
 import { Link } from "react-router-dom";
+import BlueLines from "../../Images/BlueLines.png"
 
 //  This Media Icons component  Displaying Social Media Icons********************************
 
@@ -38,6 +39,7 @@ const AboutUs = () => {
             >
               Resume Builder
             </Typography>
+            <img style={{ width: "70%", height: "30px" }} src={BlueLines} alt="BlueLineDevider" />
             <Typography
               marginBottom={5}
               variant="h6"

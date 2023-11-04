@@ -78,7 +78,6 @@ const Template_2 = () => {
               />
             </Box>
           </Box>
-
           <Box
             sx={{
               padding: "10px",

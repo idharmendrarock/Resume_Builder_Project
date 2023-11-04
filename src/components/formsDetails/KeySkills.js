@@ -45,16 +45,14 @@ const KeySkills = () => {
             container
             component="form"
             sx={{
-              width: "800px",
+              width: "750px",
               height: "auto",
               padding: "10px",
-              boxShadow: 2,
               borderRadius: "10px",
-              marginLeft: "900px",
-              m: "20px",
-              boxShadow: "0 0 20px 2px",
+              boxShadow: "0 0 20px 2px #0055ff" ,
               textAlign: "center",
               marginTop: "50px",
+              backgroundColor: "white",        
             }}
           >
             <Typography

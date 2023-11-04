@@ -45,7 +45,7 @@ const Templates = () => {
         {/* paper styling end */}
 
         {/* Box  start for contain profile name and address         */}
-        <Box sx={{ backgroundColor: "#EDA89A", marginTop: "" }}>
+        <Box sx={{ backgroundColor: "#EDA89A"}}>
           <Stack
             sx={{
               width: 155,
@@ -109,8 +109,8 @@ const Templates = () => {
                       fontWeight: "500",
                       position: "absolute",
                       marginTop: "70px",
-                      zIndex: "20",
-                      marginLeft: "165px",
+                      zIndex: "3",
+                      marginLeft: "170px",
                       color: "black",
                     }}
                   >
@@ -120,13 +120,14 @@ const Templates = () => {
               })}
             </Box>
             {/* Adress look  */}
-            <Stack sx={{ marginLeft: "460px", position: "absolute" }}>
+            <Stack sx={{ marginLeft: "435px", position: "absolute" }}>
               <Typography sx={{ color: "black" }}>
-                Email : {PersonalInfoData.Email} <br />
-                Mobile : {PersonalInfoData.MobileNo} <br />
-                Address : {PersonalInfoData.Address} <br />
-                PinCode : {PersonalInfoData.PinCode} <br /> State :{" "}
-                {PersonalInfoData.State} <br /> City : {PersonalInfoData.City}
+                {PersonalInfoData.Email} <br />
+                {PersonalInfoData.MobileNo} <br />
+                {PersonalInfoData.Address} <br />
+                {PersonalInfoData.PinCode} <br />
+                {PersonalInfoData.State} <br /> 
+                {PersonalInfoData.City}
               </Typography>
             </Stack>
             {/* objective section  */}
@@ -138,7 +139,7 @@ const Templates = () => {
                 background: "#F08460",
               }}
             />
-            <Typography sx={{ color: "black", wordWrap: "break-word" }}>
+            <Typography sx={{ color: "black"}}>
               {PersonalInfoData.Objective}
             </Typography>
             <hr
@@ -240,10 +241,18 @@ const Templates = () => {
                         position: "absolute",
                         fontWeight: 5,
                         padding: "5px",
-                        fontSize: "19px",
+                        fontSize: "19px", 
+                        listStyle: "none",                       
                       }}
                     >
+                      {skillsData &&
+                skillsData.map((info) => {
+                  return (
+                    
                       <li>{info.skills}</li>
+                    
+                  );
+                })}
                     </ul>
                   );
                 })}

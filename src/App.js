@@ -35,7 +35,7 @@ function App() {
       <BrowserRouter>
         <Provider store={store}>
           <DataContextPro>
-            <div className="para">
+            <div>
               <Navbar />
               <Routes>
                 <Route exact path="/" element={<Main />} />

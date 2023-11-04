@@ -1,5 +1,4 @@
-import { Button, Grid, MenuItem } from "@mui/material";
-import { TextField, InputAdornment } from "@mui/material";
+import { Button, Grid, MenuItem, TextField, InputAdornment } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -44,11 +43,15 @@ const PersonalInfo = () => {
       .required("This field is required"),
 
     MobileNo: yup
-      .string()
-      .required("This field is required")
-      .matches(/^[0-9]+$/, "Mobile No. must be 10 digits")
-      .min(10)
-      .max(10),
+    // .number("Enter a number")
+    // .typeError("This field is required")
+    // .positive("Mobile number can't start with 0 or - ")
+    // .integer("Mobile number can't include a decimal point"),
+
+    .string()    
+    .required("This field is required")
+    .matches(/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/, 'Mobile number is not valid')
+    .length(10, "Mobile No. must be 10 digits"),
 
     Address: yup
       .string()
@@ -227,16 +230,16 @@ const PersonalInfo = () => {
       <Box
         component="form"
         sx={{
-          width: "800px",
+          width: "750px",
           height: "auto",
           padding: "10px",
-          boxShadow: 2,
           borderRadius: "10px",
-          marginLeft: "900px",            
-          m: "20px",            
-          boxShadow: "0 0 20px 2px",
+          boxShadow: "0 0 20px 2px #0055ff",
           textAlign: "center",
           marginTop: "50px",
+          backgroundColor: "white",
+          // m: "20px",            
+          // marginLeft: "500px",            
         }}
       >
         <Box>
@@ -247,8 +250,8 @@ const PersonalInfo = () => {
           <Grid item xs={12} sm={6} >
             <TextField
               className="input-field"
-              label="FirstName"
-              sx={{ width: "90%", margin: "20px" }}
+              label="First Name"
+              sx={{ width: "90%", margin: "20px", textTransform: "capitalize" }}
               type="text"
               varient="outlined"
               {...register("FirstName")}
@@ -261,7 +264,7 @@ const PersonalInfo = () => {
           <Grid item xs={12} sm={6}>
             <TextField
               sx={{ width: "90%", margin: "20px" }}
-              label="LastName"
+              label="Last Name"
               type="text"
               varient="outlined"
               {...register("LastName")}

@@ -29,3 +29,14 @@
     width: 50%;
   }
 }
+
+body {
+  background-image: url('../public/images/BgImg.jpg');
+  background-image: url('https://images.pexels.com/photos/317356/pexels-photo-317356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;   
+}
+
+
