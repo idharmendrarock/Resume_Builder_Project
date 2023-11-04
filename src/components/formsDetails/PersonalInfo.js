@@ -20,6 +20,8 @@ const PersonalInfo = () => {
   const dispatch = useDispatch();
 
   // We are using useform Hook from React, This useform Hook is used to manage all forms states like register ,handleSubmit,error etc.***********************
+  // We are using yup and yupResolver for error etc.***********************
+
   console.log(personalField);
 
   const Schema = yup.object().shape({
@@ -69,9 +71,9 @@ const PersonalInfo = () => {
     PinCode: yup
       .string()
       .required("This field is required")
-      .matches(/^[0-9]+$/, "Pincode must be 6 digits")
-      .min(6)
-      .max(6),
+      .matches(/^[0-9]+$/, "Pincode is not valid")
+      .length(6, "Pin Code. must be 6 digits"),
+      
 
     Objective: yup
       .string()
@@ -79,19 +81,6 @@ const PersonalInfo = () => {
       .min(50)
       .max(150),
   })
-
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({ defaultValues: personalField, resolver: yupResolver(Schema) });
-
-
-  const onSubmit = (data) => {
-    dispatch(personalInfoAction(data));
-    Navigate("/details-filling-page/education");
-  };
 
 
   const States = [
@@ -223,8 +212,20 @@ const PersonalInfo = () => {
       value: 'Puducherry',
       label: 'Puducherry',
     },
-  ];
+  ]
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ defaultValues: personalField, resolver: yupResolver(Schema) });
+
+
+  const onSubmit = (data) => {
+    dispatch(personalInfoAction(data));
+    Navigate("/details-filling-page/education");
+  };
+  
   return (
     <>
       <Box
@@ -333,7 +334,7 @@ const PersonalInfo = () => {
               id="outlined-select-states"
               select
               type="Select"
-              sx={{ width: "90%", margin: "20px" }}
+              sx={{ width: "90%", margin: "20px", textAlign: "left" }}
               label="State"
               varient="outlined"
               {...register("State")}
