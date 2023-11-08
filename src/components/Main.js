@@ -21,11 +21,11 @@ const Main = () => {
 					sx={{
 						fontSize: "30px",
 						fontWeight: "bold",
-						":hover": { color: "grey" },
+						// ":hover": { color: "grey" },
 					}}>
 					TEMPLATES
 				</Typography>
-				<Typography sx={{ color: "grey", justifyContent: { xs: "center" } }}>
+				<Typography sx={{ color: "", justifyContent: { xs: "center" } }}>
 					Select Template To Get Started
 				</Typography>
 			</Box>

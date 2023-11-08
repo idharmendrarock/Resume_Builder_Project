@@ -18,7 +18,7 @@ const MyResumes = () => {
 
   const [downFileName, setDownFileName] = useState("");
 
-  const { resumeTemplate} = useMyContext();
+  const { resumeTemplate } = useMyContext();
 
   // This handleDelete function to delete Saved  Resume******************************
 
@@ -54,7 +54,7 @@ const MyResumes = () => {
   // This input style object is used  to styling inputfield*******************************
 
   const inputStyle = {
-    backgroundColor:  "white",
+    backgroundColor: "white",
     borderRadius: "10px",
     "& .MuiInputBase-input": {
       color: "black",
@@ -64,7 +64,7 @@ const MyResumes = () => {
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor:"grey",
+        borderColor: "grey",
       },
     },
   };
@@ -86,50 +86,53 @@ const MyResumes = () => {
             sx={{
               color: "red",
               marginTop: "85px",
-              textAlign: "center",              
+              textAlign: "center",
               fontWeight: "bold",
-              
             }}
-            
           >
-            😞Oops ! <p style={{marginLeft: "60px", fontSize: "1.6rem"}}>No any Resume....</p>
+            😞Oops !{" "}
+            <p style={{ marginLeft: "60px", fontSize: "1.6rem" }}>
+              No any Resume....
+            </p>
           </Typography>
-          
+
           <Typography
             subtitle1="h6"
             sx={{
               color: "blue",
               textTransform: "capitalize",
               fontWeight: "bold",
-              marginTop: "20px",              
+              marginTop: "20px",
             }}
           >
-            You do not have any Resumes yet. Make One to view it here.            
+            You do not have any Resumes yet. Make One to view it here.
           </Typography>
 
           {/* Link path To create New Resume from Dashboard ***********************************/}
-
-          <Typography
-            variant="h6"
-            onClick={() => {
-              Navigate("/");
-            }}
-            sx={{
-              color: "#cc0099",
-              cursor: "pointer",              
-              marginTop: "20px",
-              textDecoration: "underline",                        
-            }}
-          >
-            👉Click Here !👈
-          </Typography>
+          
+            <Typography className="Blink"
+              variant="h6"
+              onClick={() => {
+                Navigate("/");
+              }}
+              sx={{
+                color: "#cc0099",
+                cursor: "pointer",
+                marginTop: "20px",
+                // textDecoration: "underline",
+                fontWeight:"bold"
+              }}
+            >
+              👉Click Here !👈
+            </Typography>
+         
           <Box sx={{ mt: "30px" }}>
             <img
               style={{
                 borderRadius: "25px",
                 // boxShadow: "0px 0px 5px 1px grey",
-                width: "60%", 
-                height: "400px"
+                width: "60%",
+                height: "400px",
               }}
               src="./images/MyResume.png"
               alt="No Any Resume"
@@ -150,8 +153,8 @@ const MyResumes = () => {
                 display: "flex",
                 flexDirection: "column",
                 position: "absolute",
-                top: {xs:"150px", sm:'80px', md:'50px'},
-                right: {xs:"30%", sm:'37%', md:'10%'},
+                top: { xs: "150px", sm: "80px", md: "50px" },
+                right: { xs: "30%", sm: "37%", md: "10%" },
                 height: "200px",
                 justifyContent: "space-around",
               }}

@@ -19,9 +19,10 @@ const KeySkills = () => {
     handleSubmit,
     control,
   } = useForm({
-    defaultValues: skillsField
+    defaultValues: {
+      keySkills: [{ skills: "" }], // Provide at least one initial element
+    },
   });
-
 
   // This function Provides Functionality to control textfields by Adding New Field and removing selected ***************************************
 
@@ -79,7 +80,7 @@ const KeySkills = () => {
                     }}
                   />
                   <TextField
-                    label="Addskills"
+                    label="Add skills"
                     type="text"
                     varient="outlined"
                     sx={{ width: "35%", margin: "20px" }}

@@ -43,7 +43,9 @@ const WorkExperience = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: workExpField,
+    defaultValues: {
+      WorkExperience: [{ JobTitle: "", OrganizationName: "", StartYear: "", EndYear: "" }]
+    }
   });
 
   // This function Provides Functionality to control textfields by Adding New Field and removing selected ***************************************

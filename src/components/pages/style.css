@@ -12,6 +12,27 @@
 	transition: 0.5s ease-in-out;
 }
 
+.Blink
+
+{
+	animation: blink 0.8s linear infinite;
+  }
+@keyframes blink {
+	0% { opacity: 5;color: red; }
+	50% { opacity: 1; }
+	100% { opacity: 5;color: rgb(60, 0, 255); }
+  }
+  
+ 
+
+
+
+
+
+
+
+
+
 
 @media screen and ( min-width:0px) and (max-width:1083px) {
 	.dwnresponsive{
