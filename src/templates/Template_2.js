@@ -25,12 +25,13 @@ const Template_2 = () => {
     <Paper
       sx={{
         width: "100%",
-        maxWidth: "800px",
+        maxWidth: "650px",
         padding: "1rem",
         marginTop:"70px",
+        border: " 2px solid rgba(0, 0, 0, 0.5)"
       }}
     >
-      <Box sx={{ backgroundColor: "#DBD1E8",  padding:"5px", }}>
+      <Box sx={{ backgroundColor: "#DBD1E8"}}>
         <Stack
           sx={{
             display: "flex",
@@ -43,11 +44,11 @@ const Template_2 = () => {
               flexdirection:"row"
             }}
           >
-            <Box>
+            <Box sx={{marginTop:"1.2rem",marginLeft:".2rem"}}>
               <img
                 src={profileData}
                 alt="No Profile"
-                style={{ width: "150px", height: "150px" }}
+                style={{ width: "120px", height: "120px" }}
               />
             </Box>
             <Stack sx={{ paddingLeft: { xs: 0, sm: "1rem" } }}>
@@ -76,13 +77,14 @@ const Template_2 = () => {
         </Stack>
 
         <hr
-          style={{
-            width: "100%",
-            marginTop: "14px",
-            height: "5px",
-            backgroundColor: " #fcc4bd",
-          }}
-        />
+            style={{
+              width: "100%",
+              marginTop: "2rem",
+              height: "5px",
+              background: "#F08460",
+            }}
+          />
+
 
         <Stack
           sx={{

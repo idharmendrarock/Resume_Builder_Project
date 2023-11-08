@@ -67,7 +67,7 @@ const {mode}=useMyContext();
 			<IconButton
 				sx={{ color: "black", marginLeft: "auto" }}
 				onClick={() => setopenDrawer(!openDrawer)}>
-				<MenuIcon sx={{ color: mode === "light" ? "black" : "white" }} />
+				<MenuIcon sx={{ color: "black"  }} />
 			</IconButton>
 		</React.Fragment>
 	);

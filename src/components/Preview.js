@@ -11,6 +11,7 @@ import { SaveAltOutlined } from "@mui/icons-material";
 import { useMyContext } from "../context/Context";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
+
 // This is Preview Component of Your Resume Data  for particular  selected Tempalate******************
 
 const Preview = () => {
@@ -106,8 +107,8 @@ const Preview = () => {
                 position: "absolute",
                 flexDirection: "column-reverse",
                 justifyContent: "space-between",
-                top: {xs:"150px",sm:'150px', md:'100px'},
-                left: {xs:"0px",sm:'50px', md:'100px'},
+                top: {xs:"150px",sm:'10px', md:'100px'},
+                left: {xs:"5px",sm:'70px', md:'0px',lg:"900px"},
                 zIndex: "100",
               }}
             >

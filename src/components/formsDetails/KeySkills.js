@@ -8,6 +8,7 @@ import { keySkillsAction } from "../../Redux/Index";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useMyContext } from "../../context/Context";
+import KeyboardDoubleArrowRightSharpIcon from '@mui/icons-material/KeyboardDoubleArrowRightSharp'
 
 const KeySkills = () => {
   const { skillsField } = useMyContext();
@@ -136,7 +137,7 @@ const KeySkills = () => {
               variant="contained"
               sx={{ backgroundColor: "black", mt: "10px", fontWeight: "bold" }}
             >
-              Preview
+              Preview <KeyboardDoubleArrowRightSharpIcon />
             </Button>
           </Box>
         </>

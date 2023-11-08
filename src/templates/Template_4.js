@@ -1,6 +1,5 @@
 import React from "react";
-import Container from "@mui/material/Container";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography,Paper,Divider,List } from "@mui/material";
 import Stack from "@mui/system/Stack";
 import { useSelector } from "react-redux";
 import { useMyContext } from "../context/Context";
@@ -20,177 +19,160 @@ const Template_4 = () => {
   const skillsData = useSelector((state) => state.skills.skillDetails);
 
   return (
-    <div className="Responsive">
-      <Container
-        sx={{
-          marginTop: "90px",
-          display: "flex",
-          justifyContent: "center",
-          height: "550px",
-          color: mode === "dark" && "black",
-        }}
-      >
-        <Box
+    <Paper
+      sx={{
+        margin: "10px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "left",
+        textAlign: "left",
+        marginTop:"100px",
+        width:"650px",
+        border: " 2px solid rgba(0, 0, 0, 0.5)"
+      }}
+    >
+      <Box sx={{ backgroundColor: "#813737 "}}>
+        <Stack sx={{ padding: "20px" }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Stack
+              sx={{
+                width: "140px",
+                height: "140px",
+                borderRadius: "50%",
+                backgroundColor: "white",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                overflow: "hidden",
+              }}
+            >
+              <img src={profileData} alt="No Profile" />
+            </Stack>
+            <Stack sx={{ ml: 2 }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  color: "white",
+                  fontWeight: "600",
+                  fontSize: "24px",
+                }}
+              >
+                {PersonalInfoData.FirstName + " " + PersonalInfoData.LastName}
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  color: "white",
+                  fontWeight: "600",
+                  fontSize: "16px",
+                }}
+              >
+                {workExpData[0]?.JobTitle}
+              </Typography>
+            </Stack>
+        
+
+          <Stack sx={{ mt: 2,marginLeft:"20px" }}>
+            <Typography sx={{color: "white"}} >
+              {`${PersonalInfoData.City}, ${PersonalInfoData.State}`}
+              <br />
+              {PersonalInfoData.PinCode}
+              <br />
+              {PersonalInfoData.Address}
+              <br />
+              {PersonalInfoData.MobileNo}
+              <br />
+              {PersonalInfoData.Email}
+            </Typography>
+          </Stack>
+            </Box>
+          {/* </Box> */}
+          <Box sx={{ mt: 2 }}>
+            <Typography sx={{ color: "white" }}>
+              {PersonalInfoData.Objective}
+            </Typography>
+          </Box>
+        </Stack>
+      </Box>
+
+      <Box sx={{ padding: "20px", width: "100%" }}>
+        <Typography
+          variant="h6"
           sx={{
-            backgroundColor: "#ebffdd",
-            width: { xs: "80vw", sm: "45vw", md: "35vw" },
-            border: "1px solid grey",
-            height:{md:'100vh'}
+            color: "#813737 ",
+            fontWeight: "bold",
           }}
         >
-          <Box
+          Professional Experience
+        </Typography>
+        <Divider
+          sx={{
+            backgroundColor: "#813737 ",
+            width: "100%",
+            height: "3.5px",
+          }}
+        />
+        {workExpData.map((info, index) => (
+          <ul style={{ marginLeft: "2rem" }} key={index}>
+            <li>
+              <Typography sx={{ fontWeight: "bold" }}>{info.JobTitle}</Typography>
+              <Typography>{`${info.OrganizationName} (${info.StartYear} - ${info.EndYear})`}</Typography>
+            </li>
+          </ul>
+        ))}
+
+        <Box sx={{ mt: 2 }}>
+          <Typography
+            variant="h6"
             sx={{
-              height: "85px",
-              backgroundColor: "white",
-              position: "relative",
+              color:  "#813737 ",
+              fontWeight: "bold",
             }}
           >
-            <div style={{ padding: "10px 10px", marginLeft: "90px" }}>
-              <div style={{ display: "flex" }}>
-                <Typography
-                  sx={{                     fontSize: { xs: "16px", sm: "16px", md: "25px" },
-                  letterSpacing: 3, color: "black" }}
-                >
-                  {PersonalInfoData.FirstName}
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: { xs: "16px", sm: "16px", md: "25px" },
-                    letterSpacing: 3,
-                    marginLeft: "10px",
-                    color: "grey",
-                  }}
-                >
-                  {PersonalInfoData.LastName}
-                </Typography>
-              </div>
-              {workExpData?.map((elem) => {
-                return (
-                  <Typography
-                    sx={{
-                      letterSpacing: { xs: 2, sm: 3, md: 6 },
-                      fontSize: { xs: "8px", sm: "10px", md: "12px" },
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    {elem.JobTitle}
-                  </Typography>
-                );
-              })}
-            </div>
-            <Box sx={{ position: "absolute", top: "10px", left: "20px" }}>
-              <img
-                style={{ width: "60px", height: "60px", borderRadius: "50%" }}
-                src={profileData}
-                alt="profile-img"
-              />
-            </Box>
-          </Box>
-
-          <Box sx={{ padding: "10px", display: "flex" }}>
-            <div style={{ width: "45%" }}>
-              <Typography sx={{ fontSize: "10px" }}>
-                Email : {PersonalInfoData.Email}
-              </Typography>
-              <Typography sx={{ fontSize: "10px" }}>
-                Mobile No.: {PersonalInfoData.MobileNo}
-              </Typography>
-              <Typography sx={{ fontSize: "10px" }}>
-                Address : {PersonalInfoData.Address}
-              </Typography>
-              <Typography sx={{ fontSize: "10px" }}>
-                City : {PersonalInfoData.City}
-              </Typography>
-              <Typography sx={{ fontSize: "10px" }}>
-                State : {PersonalInfoData.state}
-              </Typography>
-              <Typography sx={{ fontSize: "10px" }}>
-                PinCode : {PersonalInfoData.PinCode}
-              </Typography>
-            </div>
-            <hr style={{ color: "#f4f4f7" }} />
-            <div style={{ width: "45%", marginLeft: "10px" }}>
-              <Typography>PROFILE</Typography>
-              <p style={{ fontSize: "10px", wordWrap: "break-word" }}>
-                {PersonalInfoData.Objective}
-              </p>
-            </div>
-          </Box>
-          <hr style={{ color: "#f4f4f7" }} />
-          <Box sx={{ padding: "8px", display: "flex" }}>
-            <div style={{ width: "45%" }}>
-              {" "}
-              <Typography sx={{ marginBottom: "10px" }}>EXPERIENCE</Typography>
-              {workExpData &&
-                workExpData.map((info) => {
-                  return (
-                    <div style={{ marginTop: "10px" }}>
-                      <Typography sx={{ fontSize: "12px", fontWeight: "bold" }}>
-                        {info.JobTitle}
-                      </Typography>
-                      <Typography sx={{ fontSize: "10px" }}>
-                        {info.OrganizationName}
-                      </Typography>
-                      <span style={{ fontSize: "10px", fontWeight: "bold" }}>
-                        {info.StartYear} -
-                      </span>
-                      <span style={{ fontSize: "10px", fontWeight: "bold" }}>
-                        {info.EndYear}
-                      </span>
-                    </div>
-                  );
-                })}
-            </div>
-            <hr style={{ color: "#f4f4f7" }} />
-            <Box sx={{ width: "45%", marginLeft: "10px" }}>
-              <Typography sx={{ marginBottom: "15px" }}>EDUCATION</Typography>
-    
-                    <div>
-                      <Typography sx={{ marginBottom: "20px" }}>
-                        {educationData.Type}
-                      </Typography>
-                      <Typography sx={{ fontSize: "12px" }}>
-                        {educationData.University}
-                      </Typography>
-                      <Typography
-                        sx={{ fontSize: "10px", marginBottom: "-5px" }}
-                      >
-                        {educationData.Degree}
-                      </Typography>
-                      <Typography sx={{ fontSize: "10px" }}></Typography>
-                      <span style={{ fontSize: "10px", fontWeight: "bold" }}>
-                        {educationData.StartYear} -
-                      </span>
-                      <span style={{ fontSize: "10px", fontWeight: "bold" }}>
-                        {educationData.EndYear}
-                      </span>
-                    </div>
-
-              <hr style={{ color: "#f4f4f7" }} />
-              <div style={{ marginTop: "10px" }}>
-                <Typography sx={{ marginBottom: "10px" }}>SKILLS</Typography>
-                <Stack sx={{ marginLeft: "5px" }}>
-                  {skillsData &&
-                    skillsData.map((info) => {
-                      return (
-                        <li
-                          style={{
-                            fontSize: "11px",
-                            fontWeight: "bold",
-                            paddingLeft: "10px",
-                          }}
-                        >
-                          {info.skills}
-                        </li>
-                      );
-                    })}
-                </Stack>
-              </div>
-            </Box>
-          </Box>
+            Education
+          </Typography>
+          <Divider
+            sx={{
+              backgroundColor:  "#813737 ",
+              width: "100%",
+              height: "3.5px",
+            }}
+          />
+          <List sx={{ marginLeft: "2rem" }}>
+            <li>
+              <Typography sx={{ fontWeight: "bold" }}>{educationData.Degree}</Typography>
+              <Typography>{`From ${educationData.University} (${educationData.StartYear} - ${educationData.EndYear})`}</Typography>
+            </li>
+          </List>
         </Box>
-      </Container>
-    </div>
+
+        <Box sx={{ mt: 2 }}>
+          <Typography
+            variant="h6"
+            sx={{
+              color:  "#813737 ",
+              fontWeight: "bold",
+            }}
+          >
+            Skills
+          </Typography>
+          <Divider
+            sx={{
+              backgroundColor:  "#813737 ",
+              width: "100%",
+              height: "3.5px",
+            }}
+          />
+          {skillsData.map((info, index) => (
+            <ul style={{ marginLeft: "2.5rem" }} key={index}>
+              <li>
+                <Typography>{info.skills}</Typography>
+              </li>
+            </ul>
+          ))}
+        </Box>
+      </Box>
+    </Paper>
   );
 };
 

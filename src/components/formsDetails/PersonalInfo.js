@@ -79,7 +79,7 @@ const PersonalInfo = () => {
       .string()
       .required("This field is required")
       .min(50)
-      .max(250),
+      .max(500),
   })
 
 
