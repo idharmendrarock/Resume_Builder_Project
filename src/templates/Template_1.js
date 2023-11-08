@@ -30,7 +30,7 @@ const Templates = () => {
           width: "100%",
           maxWidth: "650px",
           padding: "1rem",
-          marginTop: "70px",
+          // marginTop: "70px",
           border: " 2px solid rgba(0, 0, 0, 0.5)"  ,
          
            

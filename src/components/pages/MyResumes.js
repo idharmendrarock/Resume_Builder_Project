@@ -40,7 +40,7 @@ const MyResumes = () => {
         var ratio = canvas.width / canvas.height;
         var width = pdf.internal.pageSize.getWidth() * 2.5;
         var height = width / ratio;
-        pdf.addImage(imgData, "JPEG", -340, 10, width, height);
+        pdf.addImage(imgData, "JPEG", -320, 10, width, height);
         // pdf.output('dataurlnewwindow');
         pdf.save(`${downFileName}.pdf`);
 
