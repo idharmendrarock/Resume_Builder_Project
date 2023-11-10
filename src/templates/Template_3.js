@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, Typography, Paper, Divider, List } from "@mui/material";
-import Stack from "@mui/system/Stack";
+import { Typography, Paper, Divider, List, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import "../../src/App.css";
 const Template_3 = () => {
@@ -16,117 +15,94 @@ const Template_3 = () => {
     <Paper
       sx={{
         width: {
-          xs: "550px",
-          md: "850px",
-          lg: "1150px",
-          xl: "1500px",
+          xs: "400px",
+          md: "650px",
+          lg: "850px",
+          xl: "1050px",
         },
-        margin: "10px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "left",
-        textAlign: "left",
         marginTop: "100px",
-        height: "auto",
+        height: "100%",
         border: " 2px solid rgba(0, 0, 0, 0.5)",
       }}
     >
-      <Box sx={{ backgroundColor: "#5AC0E6" }}>
-        <Stack
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-          }}
-        >
-          <Box
+      <Grid >
+        <Grid container
+          direction="row"
+          justifyContent="space-around"
+          alignItems="center" sx={{ backgroundColor: "#49AED4", color: "white" }}>
+
+          <Grid
             sx={{
-              display: "flex",
-              flexdirection: "row",
+              marginTop: "30px",
             }}
           >
-            <Box sx={{ marginTop: "1.2rem", marginLeft: "5%" }}>
-              <img
-                src={profileData}
-                alt="No Profile"
-                style={{ width: "120px", height: "120px" }}
-              />
-            </Box>
-            <Stack
-              sx={{
-                paddingLeft: { xs: 0, sm: "1rem" },
-                marginTop: "8%",
-                marginLeft: "10%",
-              }}
-            >
-              <Typography variant="h4" sx={{ color: "white" }}>
-                {PersonalInfoData.FirstName} {PersonalInfoData.LastName}
-              </Typography>
-              {workExpData.length > 0 && (
-                <Typography
-                  variant="h6"
-                  sx={{ color: "white", marginLeft: "20%" }}
-                >
-                  {workExpData[0].JobTitle}
-                </Typography>
-              )}
-            </Stack>
-          </Box>
-          <Box sx={{ paddingTop: "0.5rem" }}>
-            <div
-              className="p-3"
-              style={{
-                fontSize: "16px",
-                marginRight: "10px",
-                marginLeft: "20%",
-                color:"white"
-                // paddingRight: "50%",
-              }}
-            >
-              <Typography>{PersonalInfoData.Email}</Typography>
-              <Typography>{PersonalInfoData.MobileNo}</Typography>
-              <Typography>
-                {PersonalInfoData.Address}
-                <br />
-                {PersonalInfoData.City}
-                <br />
-                {PersonalInfoData.State}
-                <br />
-                {PersonalInfoData.PinCode}
-              </Typography>
-            </div>
-           
-          </Box>
-        </Stack>
-      </Box>
-      <Stack
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                paddingLeft: "1rem",
-                paddingRight: "1rem",
-                paddingTop: "1rem",
-                color:"white",
-                backgroundColor:  "#5AC0E6" 
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: "15px",
-                  textAlign: "left",
-                  wordWrap: "break-word",
-                }}
-              >
-                {PersonalInfoData.Objective}
-              </Typography>
-            </Stack>
+            <img
+              src={profileData}
+              alt="No Profile"
+              style={{ width: "120px", height: "120px" }}
+            />
 
-      <Box sx={{ padding: "20px", width: "100%" }}>
+          </Grid>
+
+          <Grid
+            sx={{
+              marginTop: "25px",
+              textAlign: "center"
+            }}
+          >
+            <Typography variant="h4" sx={{ color: "white", fontWeight: "bold" }}>
+              {PersonalInfoData.FirstName} {PersonalInfoData.LastName}
+            </Typography>
+            {workExpData.length > 0 && (
+              <Typography
+                variant="h5"
+                sx={{marginTop: "20px", color: "white" }}
+              >
+                {workExpData[0].JobTitle}
+              </Typography>
+            )}
+          </Grid>
+
+          <Grid
+            sx={{
+              marginTop: "30px",
+            }}
+          >
+            <Typography>{PersonalInfoData.Email}</Typography>
+            <Typography>{PersonalInfoData.MobileNo}</Typography>
+            <Typography>
+              {PersonalInfoData.Address}
+              <br />
+              {PersonalInfoData.City}
+              <br />
+              {PersonalInfoData.State}
+              <br />
+              {PersonalInfoData.PinCode}
+            </Typography>
+          </Grid>
+
+          <Grid
+            sx={{
+              padding: "1rem",
+              fontSize: "1.2rem",
+              textAlign: "left",
+              wordWrap: "break-word",
+              color: "white"
+            }}
+          >
+            {PersonalInfoData.Objective}
+
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <Grid sx={{ padding: "20px", width: "100%" }}>
         <Typography
           variant="h6"
           sx={{
             color: "#5AC0E6",
             fontWeight: "bold",
+            fontSize: "1.5rem",
           }}
         >
           Professional Experience
@@ -141,20 +117,21 @@ const Template_3 = () => {
         {workExpData.map((info, index) => (
           <ul style={{ marginLeft: "2rem" }} key={index}>
             <li>
-              <Typography sx={{ fontWeight: "bold" }}>
+              <Typography sx={{ fontWeight: "bold", fontSize: "1.5rem", padding: "5px" }}>
                 {info.JobTitle}
               </Typography>
-              <Typography>{`${info.OrganizationName} (${info.StartYear} - ${info.EndYear})`}</Typography>
+              <Typography sx={{ padding: "5px" }}>{`${info.OrganizationName} (${info.StartYear} - ${info.EndYear})`}</Typography>
             </li>
           </ul>
         ))}
 
-        <Box sx={{ mt: 2 }}>
+        <Grid sx={{ width: "100%" }}>
           <Typography
             variant="h6"
             sx={{
               color: "#5AC0E6",
               fontWeight: "bold",
+              fontSize: "1.5rem",
             }}
           >
             Education
@@ -168,20 +145,21 @@ const Template_3 = () => {
           />
           <List sx={{ marginLeft: "2rem" }}>
             <li>
-              <Typography sx={{ fontWeight: "bold" }}>
+              <Typography sx={{ fontWeight: "bold", fontSize: "1.5rem" }}>
                 {educationData.Degree}
               </Typography>
-              <Typography>{`From ${educationData.University} (${educationData.StartYear} - ${educationData.EndYear})`}</Typography>
+              <Typography sx={{ padding: "5px" }}>{`From ${educationData.University} (${educationData.StartYear} - ${educationData.EndYear})`}</Typography>
             </li>
           </List>
-        </Box>
+        </Grid>
 
-        <Box sx={{ mt: 2 }}>
+        <Grid sx={{ width: "100%" }}>
           <Typography
             variant="h6"
             sx={{
               color: "#5AC0E6",
               fontWeight: "bold",
+              fontSize: "1.5rem",
             }}
           >
             Skills
@@ -196,12 +174,12 @@ const Template_3 = () => {
           {skillsData.map((info, index) => (
             <ul style={{ marginLeft: "2.5rem" }} key={index}>
               <li>
-                <Typography>{info.skills}</Typography>
+                <Typography sx={{ fontSize: "1.2rem", padding: "5px" }}>{info.skills}</Typography>
               </li>
             </ul>
           ))}
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
     </Paper>
   );
 };

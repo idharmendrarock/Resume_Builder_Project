@@ -19,14 +19,6 @@ const DetailsFilling = () => {
     <div>
       <Container sx={{ display: { md: "flex" }, mt: "70px" }}>
         <Box
-          sx={{
-            // width: "300px",
-            // height: "auto",
-            // mr: { md: "5%" },
-            // ml: { md: "0px" },
-            
-            
-          }}
         >
           <Stack
             sx={{
@@ -34,8 +26,6 @@ const DetailsFilling = () => {
               borderRadius: "20px",
               boxShadow: "0 0px 20px 2px #0055ff",
               padding: "20px",
-              // marginTop: "50px",
-              // marginLeft: "-100px",
               backgroundColor: "white",
               margin:"50px"
             }}
@@ -50,7 +40,7 @@ const DetailsFilling = () => {
                   fontWeight: "bold",                  
                 }}
               >
-                <ListItemButton >
+                <ListItemButton  >
                   <NavLink
                     to={"/details-filling-page/personal-details"}
                     style={{

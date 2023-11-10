@@ -37,10 +37,10 @@ const MyResumes = () => {
       .then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
         const pdf = new jsPDF("portrait", "pt", "a4");
-        
-        var width = 820;
-        var height = 650;
-        pdf.addImage(imgData, "JPEG", -10, 0, width, height);
+        var ratio = canvas.width / canvas.height;
+        var width = pdf.internal.pageSize.getWidth() * 1.5;
+        var height = width / ratio;
+        pdf.addImage(imgData, "JPEG", 0, 0, width, height);
         
         // Set font size
         // pdf.setFontSize(50); // Set your desired font size
@@ -148,17 +148,17 @@ const MyResumes = () => {
           {/* This Part Will allow you To Download Resume or Delete it *************************** */}
           <Box
             key={resumeTemplate.id}
-            sx={{ position: "relative", marginTop: "100px" }}
+            sx={{ position: "relative", marginTop: "100px"}}
           >
-            <Box id="resume-Temp">{resumeTemplate.rTemp}</Box>
+            <Box sx={{marginLeft: {xs: "5%", sm: "10%", md: "10%", lg: "10%" }}} id="resume-Temp" >{resumeTemplate.rTemp}</Box>
             <Box
               className="dwnresponsive"
               sx={{
                 display: "flex",
                 flexDirection: "column",
                 position: "absolute",
-                top: { xs: "150px", sm: "80px", md: "50px" },
-                right: { xs: "30%", sm: "37%", md: "10%" },
+                top: { xs: "75%", sm: "0", md:"0", lg:"0" },
+                right: { xs: "30%", sm: "10%", md: "5%", lg:"8%" },
                 height: "200px",
                 justifyContent: "space-around",
               }}

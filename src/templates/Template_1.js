@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Paper, Grid } from "@mui/material";
+import {Typography, Paper, Grid } from "@mui/material";
 import Stack from "@mui/system/Stack";
 import { useSelector } from "react-redux";
 import "../../src/App.css";
@@ -18,13 +18,13 @@ const Templates1 = () => {
       sx={{
         width: {
           xs: "400px",
-          md: "450px",
+          md: "650px",
           lg: "850px",
           xl: "1050px",
         },
         marginTop: "100px",
         height: "100%",
-        border: " 2px solid rgba(0, 0, 0, 0.5)",
+        // border: "5px solid rgba(0, 0, 0, 0.5)",
       }}
     >
       <Grid >
@@ -48,8 +48,8 @@ const Templates1 = () => {
 
           <Grid
             sx={{
-              marginTop: "25px"
-
+              marginTop: "25px",
+              textAlign: "center"
             }}
           >
             <Typography variant="h4" sx={{ color: "white", fontWeight: "bold" }}>
@@ -57,8 +57,8 @@ const Templates1 = () => {
             </Typography>
             {workExpData.length > 0 && (
               <Typography
-                variant="h6"
-                sx={{ color: "black", marginLeft: "25%", marginTop: "20px", }}
+                variant="h5"
+                sx={{ color: "black", marginTop: "20px"}}
               >
                 {workExpData[0].JobTitle}
               </Typography>
@@ -117,8 +117,6 @@ const Templates1 = () => {
 
         <Grid container
           direction="column"
-          // justifyContent="space-around"     
-          // alignItems="Left"
           sx={{
             textAlign: "left",
 
@@ -132,7 +130,6 @@ const Templates1 = () => {
                 fontWeight: "bold",
                 fontSize: "1.5rem",
                 color: " #f87d6d",
-                fontWeight: "bold",
               }}>
               Professional <br /> Experience :
 
@@ -178,7 +175,6 @@ const Templates1 = () => {
               fontWeight: "bold",
               fontSize: "1.5rem",
               color: " #f87d6d",
-              fontWeight: "bold",
             }}
           >
             Education :
@@ -224,7 +220,6 @@ const Templates1 = () => {
                 fontWeight: "bold",
                 fontSize: "1.5rem",
                 color: " #f87d6d",
-                fontWeight: "bold",
               }}
             >
               Key Skills :
@@ -233,10 +228,9 @@ const Templates1 = () => {
           <Grid sx={{
             marginLeft: "25%",
             marginBottom: "20px",
-            // fontSize: "1.5rem"
           }}>
             {skillsData.map((elem, index) => (
-              <Typography sx={{ fontSize: "1.2rem", padding: "5px" }} key={index}>
+              <Typography sx={{ fontSize: "1.2rem", padding: "3px" }} key={index}>
                 {elem.skills}
               </Typography>
             ))}
