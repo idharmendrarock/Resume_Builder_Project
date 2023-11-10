@@ -3,7 +3,7 @@ import { Box, Typography,Paper,Divider,List } from "@mui/material";
 import Stack from "@mui/system/Stack";
 import { useSelector } from "react-redux";
 import { useMyContext } from "../context/Context";
-
+import "../../src/App.css";
 const Template_4 = () => {
   //  In this Section We are Getting all data with the help  of useSelector which is stored in redux store like personalInfo Data , EducationData , WorkExperienceData and KeyskillData **************
 
@@ -20,80 +20,112 @@ const Template_4 = () => {
 
   return (
     <Paper
-      sx={{
-        margin: "10px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "left",
-        textAlign: "left",
-        marginTop:"100px",
-        width:"650px",
-        border: " 2px solid rgba(0, 0, 0, 0.5)"
-      }}
-    >
-      <Box sx={{ backgroundColor: "#813737 "}}>
-        <Stack sx={{ padding: "20px" }}>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Stack
-              sx={{
-                width: "140px",
-                height: "140px",
-                borderRadius: "50%",
-                backgroundColor: "white",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                overflow: "hidden",
-              }}
-            >
-              <img src={profileData} alt="No Profile" />
-            </Stack>
-            <Stack sx={{ ml: 2 }}>
-              <Typography
-                variant="h4"
-                sx={{
-                  color: "white",
-                  fontWeight: "600",
-                  fontSize: "24px",
-                }}
-              >
-                {PersonalInfoData.FirstName + " " + PersonalInfoData.LastName}
-              </Typography>
+    sx={{
+      width: {
+        xs: "550px",
+        md: "850px",
+        lg: "1150px",
+        xl: "1500px",
+      },
+      margin: "10px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "left",
+      textAlign: "left",
+      marginTop: "100px",
+      height: "auto",
+      border: " 2px solid rgba(0, 0, 0, 0.5)",
+    }}
+  >
+    <Box sx={{ backgroundColor: "#813737" }}>
+      <Stack
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexdirection: "row",
+          }}
+        >
+          <Box sx={{ marginTop: "1.2rem", marginLeft: "5%" }}>
+            <img
+              src={profileData}
+              alt="No Profile"
+              style={{ width: "120px", height: "120px" }}
+            />
+          </Box>
+          <Stack
+            sx={{
+              paddingLeft: { xs: 0, sm: "1rem" },
+              marginTop: "8%",
+              marginLeft: "10%",
+            }}
+          >
+            <Typography variant="h4" sx={{ color: "white" }}>
+              {PersonalInfoData.FirstName} {PersonalInfoData.LastName}
+            </Typography>
+            {workExpData.length > 0 && (
               <Typography
                 variant="h6"
-                sx={{
-                  color: "white",
-                  fontWeight: "600",
-                  fontSize: "16px",
-                }}
+                sx={{ color: "white", marginLeft: "20%" }}
               >
-                {workExpData[0]?.JobTitle}
+                {workExpData[0].JobTitle}
               </Typography>
-            </Stack>
-        
-
-          <Stack sx={{ mt: 2,marginLeft:"20px" }}>
-            <Typography sx={{color: "white"}} >
-              {`${PersonalInfoData.City}, ${PersonalInfoData.State}`}
-              <br />
-              {PersonalInfoData.PinCode}
-              <br />
+            )}
+          </Stack>
+        </Box>
+        <Box sx={{ paddingTop: "0.5rem" }}>
+          <div
+            className="p-3"
+            style={{
+              fontSize: "16px",
+              marginRight: "10px",
+              marginLeft: "20%",
+              color:"white"
+              // paddingRight: "50%",
+            }}
+          >
+            <Typography>{PersonalInfoData.Email}</Typography>
+            <Typography>{PersonalInfoData.MobileNo}</Typography>
+            <Typography>
               {PersonalInfoData.Address}
               <br />
-              {PersonalInfoData.MobileNo}
+              {PersonalInfoData.City}
               <br />
-              {PersonalInfoData.Email}
+              {PersonalInfoData.State}
+              <br />
+              {PersonalInfoData.PinCode}
             </Typography>
-          </Stack>
-            </Box>
-          {/* </Box> */}
-          <Box sx={{ mt: 2 }}>
-            <Typography sx={{ color: "white" }}>
+          </div>
+         
+        </Box>
+      </Stack>
+    </Box>
+    <Stack
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              paddingLeft: "1rem",
+              paddingRight: "1rem",
+              paddingTop: "1rem",
+              backgroundColor:  "#813737" ,
+              color:"white"
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "15px",
+                textAlign: "left",
+                wordWrap: "break-word",
+              }}
+            >
               {PersonalInfoData.Objective}
             </Typography>
-          </Box>
-        </Stack>
-      </Box>
+          </Stack>
 
       <Box sx={{ padding: "20px", width: "100%" }}>
         <Typography

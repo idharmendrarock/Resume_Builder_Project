@@ -36,21 +36,24 @@ const MyResumes = () => {
     html2canvas(content)
       .then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
-        const pdf = new jsPDF("p", "px", "a4");
-        var ratio = canvas.width / canvas.height;
-        var width = pdf.internal.pageSize.getWidth() * 2.5;
-        var height = width / ratio;
-        pdf.addImage(imgData, "JPEG", -320, 10, width, height);
-        // pdf.output('dataurlnewwindow');
-        pdf.save(`${downFileName}.pdf`);
+        const pdf = new jsPDF("portrait", "pt", "a4");
+        
+        var width = pdf.internal.pageSize.getWidth("100%");
+        var height =830;
+        pdf.addImage(imgData, "JPEG", 0, 0, width, height);
+        
+        // Set font size
+        // pdf.setFontSize(50); // Set your desired font size
 
+      //  pdf.fontWeight(500)
+      pdf.save(`${downFileName}.pdf`);
         setDownFileName("");
       })
+
       .catch(function (error) {
         console.log(error);
       });
-  }
-
+}
   // This input style object is used  to styling inputfield*******************************
 
   const inputStyle = {
@@ -109,23 +112,24 @@ const MyResumes = () => {
           </Typography>
 
           {/* Link path To create New Resume from Dashboard ***********************************/}
-          
-            <Typography className="Blink"
-              variant="h6"
-              onClick={() => {
-                Navigate("/");
-              }}
-              sx={{
-                color: "#cc0099",
-                cursor: "pointer",
-                marginTop: "20px",
-                // textDecoration: "underline",
-                fontWeight:"bold"
-              }}
-            >
-              👉Click Here !👈
-            </Typography>
-         
+
+          <Typography
+            className="Blink"
+            variant="h6"
+            onClick={() => {
+              Navigate("/");
+            }}
+            sx={{
+              color: "#cc0099",
+              cursor: "pointer",
+              marginTop: "20px",
+              // textDecoration: "underline",
+              fontWeight: "bold",
+            }}
+          >
+            👉Click Here !👈
+          </Typography>
+
           <Box sx={{ mt: "30px" }}>
             <img
               style={{

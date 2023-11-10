@@ -21,7 +21,7 @@ const KeySkills = () => {
     control,
   } = useForm({
     defaultValues: {
-      keySkills: [{ skills: "" }], // Provide at least one initial element
+      defaultValues: skillsField
     },
   });
 

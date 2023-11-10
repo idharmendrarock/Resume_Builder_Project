@@ -97,7 +97,7 @@ const Preview = () => {
             key={PreviewResume.id}
             sx={{ position: "relative" }}
           >
-            <Box id="resume-pre">{PreviewResume.rTemp}</Box>
+            <Box  id="resume-pre">{PreviewResume.rTemp}</Box>
             <Box
               className="btnresponsive"
               sx={{
@@ -107,8 +107,8 @@ const Preview = () => {
                 position: "absolute",
                 flexDirection: "column-reverse",
                 justifyContent: "space-between",
-                top: {xs:"150px",sm:'10px', md:'100px'},
-                left: {xs:"5px",sm:'70px', md:'0px',lg:"900px"},
+                top: {xs:"1100px",sm:'600px', md:'950px'},
+                left: {xs:"-300px",sm:'-200px', md:'500px'},
                 zIndex: "100",
               }}
             >
