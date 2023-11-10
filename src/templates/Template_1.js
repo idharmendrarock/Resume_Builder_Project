@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Paper } from "@mui/material";
+import { Box, Typography, Paper, Grid } from "@mui/material";
 import Stack from "@mui/system/Stack";
 import { useSelector } from "react-redux";
 import "../../src/App.css";
@@ -17,116 +17,94 @@ const Templates1 = () => {
     <Paper
       sx={{
         width: {
-          xs: "550px",
-          md: "850px",
-          lg: "1150px",
-          xl: "1500px",
+          xs: "400px",
+          md: "450px",
+          lg: "850px",
+          xl: "1050px",
         },
-        margin: "10px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "left",
-        textAlign: "left",
-        marginTop: "100px",       
-        height: "auto",
+        marginTop: "100px",
+        height: "100%",
         border: " 2px solid rgba(0, 0, 0, 0.5)",
       }}
     >
-      <Box sx={{ backgroundColor: " #fcc4bd" }}>
-        <Stack
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-          }}
-        >
-          <Box
+      <Grid >
+        <Grid container
+          direction="row"
+          justifyContent="space-around"
+          alignItems="center" sx={{ backgroundColor: " #fcc4bd", }}>
+
+          <Grid
             sx={{
-              display: "flex",
-              flexdirection: "row",
+              marginTop: "30px",
             }}
           >
-            <Box sx={{ marginTop: "1.2rem", marginLeft: "5%" }}>
-              <img
-                src={profileData}
-                alt="No Profile"
-                style={{ width: "120px", height: "120px" }}
-              />
-            </Box>
-            <Stack
-              sx={{
-                paddingLeft: { xs: 0, sm: "1rem" },
-                marginTop: "8%",
-                marginLeft: "10%",
-              }}
-            >
-              <Typography variant="h4" sx={{ color: "white" }}>
-                {PersonalInfoData.FirstName} {PersonalInfoData.LastName}
-              </Typography>
-              {workExpData.length > 0 && (
-                <Typography
-                  variant="h6"
-                  sx={{ color: "black", marginLeft: "20%" }}
-                >
-                  {workExpData[0].JobTitle}
-                </Typography>
-              )}
-            </Stack>
-          </Box>
-          <Box sx={{ paddingTop: "0.5rem" }}>
-            <div
-              className="p-3"
-              style={{
-                fontSize: "16px",
-                marginRight: "10px",
-                marginLeft: "10px",
-                paddingRight: "50%",
-              }}
-            >
-              <Typography>{PersonalInfoData.Email}</Typography>
-              <Typography>{PersonalInfoData.MobileNo}</Typography>
-              <Typography>
-                {PersonalInfoData.Address}
-                <br />
-                {PersonalInfoData.City}
-                <br />
-                {PersonalInfoData.State}
-                <br />
-                {PersonalInfoData.PinCode}
-              </Typography>
-            </div>
-          </Box>
-        </Stack>
+            <img
+              src={profileData}
+              alt="No Profile"
+              style={{ width: "120px", height: "120px" }}
+            />
 
-        <hr
-          style={{
-            width: "100%",
-            marginTop: "2rem",
-            height: "5px",
-            background: "#F08460",
-          }}
-        />
+          </Grid>
 
-        <Stack
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            paddingLeft: "1rem",
-            paddingRight: "1rem",
-            paddingTop: "1rem",
-            backgroundColor: "white",
-          }}
-        >
-          <Typography
+          <Grid
             sx={{
-              fontSize: "15px",
-              textAlign: "left",
-              wordWrap: "break-word",
+              marginTop: "25px"
+
             }}
           >
-            {PersonalInfoData.Objective}
-          </Typography>
-        </Stack>
+            <Typography variant="h4" sx={{ color: "white", fontWeight: "bold" }}>
+              {PersonalInfoData.FirstName} {PersonalInfoData.LastName}
+            </Typography>
+            {workExpData.length > 0 && (
+              <Typography
+                variant="h6"
+                sx={{ color: "black", marginLeft: "25%", marginTop: "20px", }}
+              >
+                {workExpData[0].JobTitle}
+              </Typography>
+            )}
+          </Grid>
+
+          <Grid
+            sx={{
+              marginTop: "30px",
+            }}
+          >
+            <Typography>{PersonalInfoData.Email}</Typography>
+            <Typography>{PersonalInfoData.MobileNo}</Typography>
+            <Typography>
+              {PersonalInfoData.Address}
+              <br />
+              {PersonalInfoData.City}
+              <br />
+              {PersonalInfoData.State}
+              <br />
+              {PersonalInfoData.PinCode}
+            </Typography>
+          </Grid>
+
+
+          <hr
+            style={{
+              width: "100%",
+              marginTop: "2rem",
+              height: "5px",
+              background: "#F08460",
+            }}
+          />
+
+        </Grid>
+
+        <Grid
+          sx={{
+            padding: "1rem",
+            fontSize: "1.2rem",
+            textAlign: "left",
+            wordWrap: "break-word",
+          }}
+        >
+          {PersonalInfoData.Objective}
+        </Grid>
 
         <hr
           style={{
@@ -137,36 +115,50 @@ const Templates1 = () => {
           }}
         />
 
-        <Box sx={{ padding: "1rem", background: "white", sm: 20 }}>
-          <Typography
-            variant="h6"
-            sx={{ color: " #f87d6d", fontWeight: "bold", position: "relative" }}
-          >
-            Professional <br /> Experience
-          </Typography>
+        <Grid container
+          direction="column"
+          // justifyContent="space-around"     
+          // alignItems="Left"
+          sx={{
+            textAlign: "left",
 
-          <Stack
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", sm: "column" },
-            }}
+          }}>
+          <Grid>
+            <Typography
+              variant="h6"
+              sx={{
+                wordWrap: "break-word",
+                padding: "1rem",
+                fontWeight: "bold",
+                fontSize: "1.5rem",
+                color: " #f87d6d",
+                fontWeight: "bold",
+              }}>
+              Professional <br /> Experience :
+
+            </Typography>
+
+          </Grid>
+
+          <Grid
+            sx={{ fontSize: "1.2rem", marginLeft: "25%", marginBottom: "20px" }}
           >
             {workExpData.map((elem, index) => (
-              <div style={{ marginLeft: 200, bottom: "200px" }} key={index}>
-                <Typography sx={{ fontWeight: "bold" }}>
+              <Stack key={index}>
+                <Typography sx={{ fontWeight: "bold", fontSize: "1.5rem", padding: "5px" }}>
                   {elem.JobTitle}
                 </Typography>
-                I have some strong work experience that will help me with this
-                job if I am successful.
-                <Typography> I worked in {elem.OrganizationName}</Typography>
-                <Typography>
-                  {" "}
-                  from {elem.StartYear} - {elem.EndYear}{" "}
+                <Typography>I have some strong work experience that will help me with this
+                  job if I am successful.
                 </Typography>
-              </div>
+                <Typography sx={{ padding: "3px" }}> I worked in {elem.OrganizationName}</Typography>
+                {" "}
+                <Typography sx={{ fontWeight: "bold", padding: "3px" }}>{elem.StartYear} - {elem.EndYear}{" "}
+                </Typography>
+              </Stack>
             ))}
-          </Stack>
-        </Box>
+          </Grid>
+        </Grid>
 
         <hr
           style={{
@@ -177,28 +169,41 @@ const Templates1 = () => {
           }}
         />
 
-        <Box sx={{ padding: "1rem", background: "white" }}>
+        <Grid>
           <Typography
             variant="h6"
-            sx={{ color: " #f87d6d", fontWeight: "bold" }}
+            sx={{
+              wordWrap: "break-word",
+              padding: "1rem",
+              fontWeight: "bold",
+              fontSize: "1.5rem",
+              color: " #f87d6d",
+              fontWeight: "bold",
+            }}
           >
-            Education
+            Education :
           </Typography>
-          <div>
-            <Typography sx={{ marginLeft: 25, fontWeight: "bold" }}>
+          <Grid
+            sx={{ fontSize: "1.2rem", marginLeft: "25%", marginBottom: "20px", marginRight: "10px" }}
+          >
+            <Typography sx={{ fontWeight: "bold", fontSize: "1.5rem", padding: "5px" }}>
               {educationData.Degree}
             </Typography>
-            <Typography sx={{ marginLeft: 25 }}>
+            <Typography sx={{padding: "3px" }}>
               {" "}
+              
               I have persued my {educationData.Type}
+            </Typography >
+            <Typography sx={{padding: "3px"}}> in {" "}
+            {educationData.Degree} from {educationData.University}
             </Typography>
-            <Typography sx={{ marginLeft: 25 }}>
-              {" "}
-              in {educationData.Degree} from {educationData.University}{" "}
+            {" "}
+            <Typography sx={{ fontWeight: "bold", padding: "3px" }} >
               Duration: {educationData.StartYear} - {educationData.EndYear}
             </Typography>
-          </div>
-        </Box>
+
+          </Grid>
+        </Grid>
 
         <hr
           style={{
@@ -209,22 +214,35 @@ const Templates1 = () => {
           }}
         />
 
-        <Box sx={{ padding: "1rem", background: "white" }}>
-          <Typography
-            variant="h6"
-            sx={{ color: " #f87d6d", fontWeight: "bold" }}
-          >
-            Key Skills
-          </Typography>
-          <div>
+        <Grid>
+          <Grid>
+            <Typography
+              variant="h6"
+              sx={{
+                wordWrap: "break-word",
+                padding: "1rem",
+                fontWeight: "bold",
+                fontSize: "1.5rem",
+                color: " #f87d6d",
+                fontWeight: "bold",
+              }}
+            >
+              Key Skills :
+            </Typography>
+          </Grid>
+          <Grid sx={{
+            marginLeft: "25%",
+            marginBottom: "20px",
+            // fontSize: "1.5rem"
+          }}>
             {skillsData.map((elem, index) => (
-              <Typography sx={{ marginLeft: 25 }} key={index}>
+              <Typography sx={{ fontSize: "1.2rem", padding: "5px" }} key={index}>
                 {elem.skills}
               </Typography>
             ))}
-          </div>
-        </Box>
-      </Box>
+          </Grid>
+        </Grid>
+      </Grid>
     </Paper>
   );
 };

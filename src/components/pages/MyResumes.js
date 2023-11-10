@@ -38,9 +38,9 @@ const MyResumes = () => {
         const imgData = canvas.toDataURL("image/png");
         const pdf = new jsPDF("portrait", "pt", "a4");
         
-        var width = pdf.internal.pageSize.getWidth("100%");
-        var height =830;
-        pdf.addImage(imgData, "JPEG", 0, 0, width, height);
+        var width = 820;
+        var height = 650;
+        pdf.addImage(imgData, "JPEG", -10, 0, width, height);
         
         // Set font size
         // pdf.setFontSize(50); // Set your desired font size

@@ -2,12 +2,12 @@ import React from "react";
 import { Box, Typography,Paper,Divider,List } from "@mui/material";
 import Stack from "@mui/system/Stack";
 import { useSelector } from "react-redux";
-import { useMyContext } from "../context/Context";
+// import { useMyContext } from "../context/Context";
 import "../../src/App.css";
 const Template_4 = () => {
   //  In this Section We are Getting all data with the help  of useSelector which is stored in redux store like personalInfo Data , EducationData , WorkExperienceData and KeyskillData **************
 
-  const { mode } = useMyContext();
+  // const { mode } = useMyContext();
   const PersonalInfoData = useSelector(
     (state) => state.personalInfo.personalInfoValues
   );
@@ -101,7 +101,6 @@ const Template_4 = () => {
               {PersonalInfoData.PinCode}
             </Typography>
           </div>
-         
         </Box>
       </Stack>
     </Box>
