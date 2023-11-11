@@ -24,7 +24,7 @@ const Templates1 = () => {
         },
         marginTop: "100px",
         height: "100%",
-        // border: "5px solid rgba(0, 0, 0, 0.5)",
+        border: "3px solid rgba(0, 0, 0, 0.5)",
       }}
     >
       <Grid >

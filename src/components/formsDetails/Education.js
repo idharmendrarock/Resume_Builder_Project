@@ -64,7 +64,12 @@ const Education = () => {
           container
           component="form"
           sx={{
-            width: "750px",
+            width: {
+              xs: "350px",
+              md: "650px",
+              lg: "850px",
+              xl: "1050px",
+            },
             height: "auto",
             padding: "10px",
             borderRadius: "10px",

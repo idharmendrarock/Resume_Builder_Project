@@ -56,7 +56,7 @@ const Template_3 = () => {
             {workExpData.length > 0 && (
               <Typography
                 variant="h5"
-                sx={{marginTop: "20px", color: "white" }}
+                sx={{marginTop: "20px", color: "white", letterSpacing:"3px" }}
               >
                 {workExpData[0].JobTitle}
               </Typography>

@@ -37,7 +37,7 @@ const MyResumes = () => {
       .then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
         const pdf = new jsPDF("p", "px", "a4");
-        var width = pdf.internal.pageSize.getWidth() * 1.566;
+        var width = pdf.internal.pageSize.getWidth() * 1.570;
         var height = pdf.internal.pageSize.getHeight() * 1
         pdf.addImage(imgData, "JPEG", 0, 0, width, height);
         pdf.save(`${downFileName}.pdf`);

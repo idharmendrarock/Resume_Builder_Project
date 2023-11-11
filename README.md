@@ -10,7 +10,7 @@
 
 ## Introduction
 
-Welcome to the Resume Builder Website project! This project is developed by Dharmendra Ashok and Prachi to provide a user-friendly platform for creating and managing resumes. Whether you are a job seeker or someone helping others build their resumes, our website aims to streamline the process and make it more efficient.
+Welcome to the Resume Builder Website project! This project is developed by Dharmendra, Ashok and Prachi to provide a user-friendly platform for creating and managing resumes. Whether you are a job seeker or someone helping others build their resumes, our website aims to streamline the process and make it more efficient.
 
 ## Features
 
@@ -56,7 +56,7 @@ npm install
 ## Contributing
 
 - **Dharmendra ([GitHub Profile](https://github.com/idhamrendrarock))**
-- **Ashok ([GitHub Profile](#))**
+- **Ashok ([GitHub Profile](https://github.com/ashok-890))**
 - **Prachi ([GitHub Profile](#))**
 
 
