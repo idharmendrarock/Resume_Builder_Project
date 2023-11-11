@@ -8,6 +8,7 @@ import { workExpAction } from "../../Redux/Index";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
 import { useMyContext } from "../../context/Context";
+import { OnKeyPress } from "../OnKeyPress";
 
 const WorkExperience = () => {
   const { workExpField } = useMyContext();
@@ -52,7 +53,7 @@ const WorkExperience = () => {
     name: "WorkExperience",
     control,
   });
-
+  OnKeyPress(append, "Enter");
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
@@ -75,6 +76,7 @@ const WorkExperience = () => {
             boxShadow: "0 0 20px 2px #0055ff" ,
             textAlign: "center",
             marginTop: "50px",
+            marginBottom:"20px",
             backgroundColor: "white",         
           }}
         >
@@ -206,7 +208,7 @@ const WorkExperience = () => {
                 <Button
                   sx={{ margin: "20px 0px 30px 0px" }}
                   color="error"
-                  variant="outlined"
+                  variant="contained"
                   endIcon={<DeleteIcon />}
                   onClick={() => remove(index)}
                 >
@@ -226,7 +228,7 @@ const WorkExperience = () => {
                   EndYear: "",
                 })
               }
-              variant="outlined"
+              variant="contained"
               sx={{ fontWeight: "bold" }}
             >
               Add

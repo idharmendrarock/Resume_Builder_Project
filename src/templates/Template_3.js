@@ -172,7 +172,7 @@ const Template_3 = () => {
             }}
           />
           {skillsData.map((info, index) => (
-            <ul style={{ marginLeft: "2.5rem" }} key={index}>
+            <ul style={{ marginLeft: "2.5rem" , padding: "5px"}} key={index}>
               <li>
                 <Typography sx={{ fontSize: "1.2rem", padding: "5px" }}>{info.skills}</Typography>
               </li>

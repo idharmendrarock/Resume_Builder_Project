@@ -1,4 +1,10 @@
-import { Button, Grid, MenuItem, TextField, InputAdornment } from "@mui/material";
+import {
+  Button,
+  Grid,
+  MenuItem,
+  TextField,
+  InputAdornment,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -8,9 +14,8 @@ import { useNavigate } from "react-router-dom";
 import ProfileSection from "./ProfileSection";
 import { useMyContext } from "../../context/Context";
 import "../../App.css";
-import * as yup from "yup"
-import { yupResolver } from "@hookform/resolvers/yup"
-
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 
 const PersonalInfo = () => {
@@ -45,174 +50,164 @@ const PersonalInfo = () => {
       .required("This field is required"),
 
     MobileNo: yup
-    // .number("Enter a number")
-    // .typeError("This field is required")
-    // .positive("Mobile number can't start with 0 or - ")
-    // .integer("Mobile number can't include a decimal point"),
+      // .number("Enter a number")
+      // .typeError("This field is required")
+      // .positive("Mobile number can't start with 0 or - ")
+      // .integer("Mobile number can't include a decimal point"),
 
-    .string()    
-    .required("This field is required")
-    .matches(/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/, 'Mobile number is not valid')
-    .length(10, "Mobile No. must be 10 digits"),
-
-    Address: yup
       .string()
-      .required("This field is required"),
+      .required("This field is required")
+      .matches(
+        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+        "Mobile number is not valid"
+      )
+      .length(10, "Mobile No. must be 10 digits"),
 
+    Address: yup.string().required("This field is required"),
 
-    City: yup
-      .string()
-      .required("This field is required"),
+    City: yup.string().required("This field is required"),
 
-    State: yup
-      .string()
-      .required("This field is required"),
+    State: yup.string().required("This field is required"),
 
     PinCode: yup
       .string()
       .required("This field is required")
       .matches(/^[0-9]+$/, "Pincode is not valid")
       .length(6, "Pin Code. must be 6 digits"),
-      
 
-    Objective: yup
-      .string()
-      .required("This field is required")
-      .min(50)
-      .max(500),
-  })
-
+    Objective: yup.string().required("This field is required").min(50).max(500),
+  });
 
   const States = [
     {
-      value: 'Andhra Pradesh',
-      label: 'Andhra Pradesh',
+      value: "Andhra Pradesh",
+      label: "Andhra Pradesh",
     },
     {
-      value: 'Arunachal Pradesh',
-      label: 'Arunachal Pradesh',
+      value: "Arunachal Pradesh",
+      label: "Arunachal Pradesh",
     },
     {
-      value: 'Assam',
-      label: 'Assam',
+      value: "Assam",
+      label: "Assam",
     },
     {
-      value: 'Bihar',
-      label: 'Bihar',
+      value: "Bihar",
+      label: "Bihar",
     },
     {
-      value: 'Chhattisgarh',
-      label: 'Chhattisgarh',
+      value: "Chhattisgarh",
+      label: "Chhattisgarh",
     },
     {
-      value: 'Goa',
-      label: 'Goa',
+      value: "Goa",
+      label: "Goa",
     },
     {
-      value: 'Gujarat',
-      label: 'Gujarat',
+      value: "Gujarat",
+      label: "Gujarat",
     },
     {
-      value: 'Haryana',
-      label: 'Haryana',
+      value: "Haryana",
+      label: "Haryana",
     },
     {
-      value: 'Himachal Pradesh',
-      label: 'Himachal Pradesh',
+      value: "Himachal Pradesh",
+      label: "Himachal Pradesh",
     },
     {
-      value: 'Jharkhand',
-      label: 'Jharkhand',
+      value: "Jharkhand",
+      label: "Jharkhand",
     },
     {
-      value: 'Karnataka',
-      label: 'Karnataka',
+      value: "Karnataka",
+      label: "Karnataka",
     },
     {
-      value: 'Kerala',
-      label: 'Kerala',
+      value: "Kerala",
+      label: "Kerala",
     },
     {
-      value: 'Madhya Pradesh',
-      label: 'Madhya Pradesh',
+      value: "Madhya Pradesh",
+      label: "Madhya Pradesh",
     },
     {
-      value: 'Maharashtra',
-      label: 'Maharashtra',
+      value: "Maharashtra",
+      label: "Maharashtra",
     },
     {
-      value: 'Meghalaya',
-      label: 'Meghalaya',
+      value: "Meghalaya",
+      label: "Meghalaya",
     },
     {
-      value: 'Mizoram',
-      label: 'Mizoram',
+      value: "Mizoram",
+      label: "Mizoram",
     },
     {
-      value: 'Nagaland',
-      label: 'Nagaland',
+      value: "Nagaland",
+      label: "Nagaland",
     },
     {
-      value: 'Odisha',
-      label: 'Odisha',
+      value: "Odisha",
+      label: "Odisha",
     },
     {
-      value: 'Punjab',
-      label: 'Punjab',
+      value: "Punjab",
+      label: "Punjab",
     },
     {
-      value: 'Rajasthan',
-      label: 'Rajasthan',
+      value: "Rajasthan",
+      label: "Rajasthan",
     },
     {
-      value: 'Sikkim',
-      label: 'Sikkim',
+      value: "Sikkim",
+      label: "Sikkim",
     },
     {
-      value: 'Tamil Nadu',
-      label: 'Tamil Nadu',
+      value: "Tamil Nadu",
+      label: "Tamil Nadu",
     },
     {
-      value: 'Telangana',
-      label: 'Telangana',
+      value: "Telangana",
+      label: "Telangana",
     },
     {
-      value: 'Tripura',
-      label: 'Tripura',
+      value: "Tripura",
+      label: "Tripura",
     },
     {
-      value: 'Uttar Pradesh',
-      label: 'Uttar Pradesh',
+      value: "Uttar Pradesh",
+      label: "Uttar Pradesh",
     },
     {
-      value: 'Uttarakhand',
-      label: 'Uttarakhand',
+      value: "Uttarakhand",
+      label: "Uttarakhand",
     },
     {
-      value: 'West Bengal',
-      label: 'West Bengal',
+      value: "West Bengal",
+      label: "West Bengal",
     },
     {
-      value: 'Andaman and Nicobar Islands',
-      label: 'Union Territory',
+      value: "Andaman and Nicobar Islands",
+      label: "Union Territory",
     },
     {
-      value: 'Dadra and Nagar Haveli and Daman and Diu',
-      label: 'Dadra and Nagar Haveli and Daman and Diu',
+      value: "Dadra and Nagar Haveli and Daman and Diu",
+      label: "Dadra and Nagar Haveli and Daman and Diu",
     },
     {
-      value: 'Lakshadweep',
-      label: 'Lakshadweep',
+      value: "Lakshadweep",
+      label: "Lakshadweep",
     },
     {
-      value: 'Delhi',
-      label: 'Delhi',
+      value: "Delhi",
+      label: "Delhi",
     },
     {
-      value: 'Puducherry',
-      label: 'Puducherry',
+      value: "Puducherry",
+      label: "Puducherry",
     },
-  ]
+  ];
 
   const {
     register,
@@ -220,12 +215,12 @@ const PersonalInfo = () => {
     formState: { errors },
   } = useForm({ defaultValues: personalField, resolver: yupResolver(Schema) });
 
-
   const onSubmit = (data) => {
     dispatch(personalInfoAction(data));
     Navigate("/details-filling-page/education");
   };
-  
+
+
   return (
     <>
       <Box
@@ -238,17 +233,15 @@ const PersonalInfo = () => {
           boxShadow: "0 0 20px 2px #0055ff",
           textAlign: "center",
           marginTop: "50px",
+          marginBottom: "20px",
           backgroundColor: "white",
-          // m: "20px",            
-          // marginLeft: "500px",            
         }}
       >
         <Box>
           <ProfileSection />
         </Box>
-        <Grid className="Responsive" container
-        >
-          <Grid item xs={12} sm={6} >
+        <Grid className="Responsive" container>
+          <Grid item xs={12} sm={6}>
             <TextField
               className="input-field"
               label="First Name"
@@ -260,7 +253,6 @@ const PersonalInfo = () => {
               helperText={errors?.FirstName?.message}
             />
           </Grid>
-
 
           <Grid item xs={12} sm={6}>
             <TextField
@@ -274,7 +266,6 @@ const PersonalInfo = () => {
             />
           </Grid>
 
-
           <Grid item xs={12} sm={6}>
             <TextField
               sx={{ width: "90%", margin: "20px" }}
@@ -286,7 +277,6 @@ const PersonalInfo = () => {
               helperText={errors?.Email?.message}
             />
           </Grid>
-
 
           <Grid item xs={12} sm={6}>
             <TextField
@@ -363,7 +353,6 @@ const PersonalInfo = () => {
 
           <Grid item xs={12} sm={12}>
             <TextField
-
               sx={{ width: "90%", margin: "20px" }}
               label="Objective"
               type="text"
@@ -379,6 +368,7 @@ const PersonalInfo = () => {
           <Grid item xs={12} sm={12}>
             <Button
               onClick={handleSubmit(onSubmit)}
+              // OnKeyPress ={handleSubmit(onsubmit)}
               type="submit"
               variant="contained"
               sx={{ backgroundColor: "black", mt: "10px", fontWeight: "bold" }}
@@ -386,8 +376,8 @@ const PersonalInfo = () => {
               Next
             </Button>
           </Grid>
-        </Grid >
-      </Box >
+        </Grid>
+      </Box>
     </>
   );
 };
