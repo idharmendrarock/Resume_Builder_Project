@@ -17,7 +17,6 @@ import { useMyContext } from "../../context/Context";
 const DrawerComp = () => {
 	const [openDrawer, setopenDrawer] = useState(false);
 	const [selectedIndex, setSelectedIndex] = useState(0);
-const {mode}=useMyContext();
 
 	const handleListItemClick = (event, index) => {
 		setSelectedIndex(index);
