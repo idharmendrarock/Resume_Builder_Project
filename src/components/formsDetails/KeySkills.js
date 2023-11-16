@@ -10,6 +10,10 @@ import { useMyContext } from "../../context/Context";
 import ClearIcon from "@mui/icons-material/Clear";
 import KeyboardDoubleArrowRightSharpIcon from "@mui/icons-material/KeyboardDoubleArrowRightSharp";
 import { OnKeyPress } from "../OnKeyPress";
+
+
+
+
 const KeySkills = () => {
   const { skillsField } = useMyContext();
   const Navigate = useNavigate();

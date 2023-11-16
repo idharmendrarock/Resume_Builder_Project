@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+// we are using windows property for key status access********
+
 
 export const  OnKeyPress= (callback, targetkey) => {
   useEffect (()=>{

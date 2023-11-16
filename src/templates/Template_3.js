@@ -2,6 +2,11 @@ import React from "react";
 import { Typography, Paper, Divider, List, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import "../../src/App.css";
+
+
+
+//  In this Section We are Getting all data with the help  of useSelector which is stored in redux store like personalInfo Data , EducationData , WorkExperienceData and KeyskillData **************
+
 const Template_3 = () => {
   const PersonalInfoData = useSelector(
     (state) => state.personalInfo.personalInfoValues

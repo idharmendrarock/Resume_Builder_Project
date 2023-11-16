@@ -29,6 +29,7 @@ const Main = () => {
 					Select Template To Get Started
 				</Typography>
 			</Box>
+			
  {/* Passing all the tempalate images data to tempGrid Component as a Props ********************** */}
 
 			<Container

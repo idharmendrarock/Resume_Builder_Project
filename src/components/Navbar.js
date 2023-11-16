@@ -26,7 +26,7 @@ const NavBar = () => {
 			position="fixed"
 			sx={{ backgroundColor: "White" }}>
 
-			{/* Almabetter Logo for Desktop view And Responsive View **************************************/}
+{/* Almabetter Logo for Desktop view And Responsive View **************************************/}
 
 			<Toolbar>
 				{isMatch ? (
@@ -39,7 +39,7 @@ const NavBar = () => {
 							/>							
 						</Typography>
 
-						{/* Introducing DrawerComponent for Responsive View **********************************/}
+{/* Introducing DrawerComponent for Responsive View **********************************/}
 
 						<DrawerComp />
 					</>
@@ -53,7 +53,7 @@ const NavBar = () => {
 							/>							
 						</Typography>
 
-						{/* Navbar links for Different Pages *************************************************/}
+{/* Navbar links for Different Pages *************************************************/}
 
 						<Tabs sx={{ marginLeft: "auto" }}>
 							<Tab

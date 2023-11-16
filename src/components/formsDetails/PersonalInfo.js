@@ -18,14 +18,15 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 
+// We are using useform Hook from React, This useform Hook is used to manage all forms states like register ,handleSubmit etc.***********************
+
 const PersonalInfo = () => {
   const { personalField } = useMyContext();
   const Navigate = useNavigate();
 
   const dispatch = useDispatch();
 
-  // We are using useform Hook from React, This useform Hook is used to manage all forms states like register ,handleSubmit,error etc.***********************
-  // We are using yup and yupResolver for error etc.***********************
+  // We are using yup and yupResolver(Schema) for error validation etc.***********************
 
   console.log(personalField);
 
@@ -50,11 +51,6 @@ const PersonalInfo = () => {
       .required("This field is required"),
 
     MobileNo: yup
-      // .number("Enter a number")
-      // .typeError("This field is required")
-      // .positive("Mobile number can't start with 0 or - ")
-      // .integer("Mobile number can't include a decimal point"),
-
       .string()
       .required("This field is required")
       .matches(

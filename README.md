@@ -56,8 +56,8 @@ npm install
 ## Contributing
 
 - **Dharmendra ([GitHub Profile](https://github.com/idhamrendrarock))**
-- **Ashok ([GitHub Profile](https://github.com/ashok-890))**
-- **Prachi ([GitHub Profile](#))**
+- **Ashok ([GitHub Profile](https://github.com/ashok-SN))**
+- **Prachi ([GitHub Profile](https://github.com/prachirahud))**
 
 
 -**Thank you for choosing our Resume Builder Website.** 

@@ -3,6 +3,10 @@ import {Typography, Paper, Grid } from "@mui/material";
 import Stack from "@mui/system/Stack";
 import { useSelector } from "react-redux";
 import "../../src/App.css";
+
+
+//  In this Section We are Getting all data with the help  of useSelector which is stored in redux store like personalInfo Data , EducationData , WorkExperienceData and KeyskillData **************
+
 const Template_2 = () => {
   const PersonalInfoData = useSelector(
     (state) => state.personalInfo.personalInfoValues
@@ -30,7 +34,7 @@ const Template_2 = () => {
         <Grid container
           direction="row"
           justifyContent="space-around"
-          alignItems="center" sx={{ backgroundColor: "#B1BBE4" }}>
+          alignItems="center" sx={{ backgroundColor: "#1E801C" }}>
 
           <Grid
             sx={{
@@ -88,7 +92,7 @@ const Template_2 = () => {
               width: "100%",
               marginTop: "2rem",
               height: "5px",
-              background: "#5069C2",
+              background: "#1E801C",
             }}
           />
 
@@ -110,7 +114,7 @@ const Template_2 = () => {
             width: "100%",
             marginTop: "0rem",
             height: "5px",
-            background: "#5069C2",
+            background: "#1E801C",
           }}
         />
 
@@ -128,7 +132,7 @@ const Template_2 = () => {
                 padding: "1rem",
                 fontWeight: "bold",
                 fontSize: "1.5rem",
-                color: "#5069C2",
+                color: "#1E801C",
               }}>
               Professional <br /> Experience :
 
@@ -161,7 +165,7 @@ const Template_2 = () => {
             width: "100%",
             marginTop: "0rem",
             height: "5px",
-            background: "#5069C2",
+            background: "#1E801C",
           }}
         />
 
@@ -173,7 +177,7 @@ const Template_2 = () => {
               padding: "1rem",
               fontWeight: "bold",
               fontSize: "1.5rem",
-              color: "#5069C2",
+              color: "#1E801C",
             }}
           >
             Education :
@@ -205,7 +209,7 @@ const Template_2 = () => {
             width: "100%",
             marginTop: "0rem",
             height: "5px",
-            background: "#5069C2",
+            background: "#1E801C",
           }}
         />
 
@@ -218,7 +222,7 @@ const Template_2 = () => {
                 padding: "1rem",
                 fontWeight: "bold",
                 fontSize: "1.5rem",
-                color: "#5069C2",
+                color: "#1E801C",
               }}
             >
               Key Skills :

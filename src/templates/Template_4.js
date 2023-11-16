@@ -1,12 +1,13 @@
 import React from "react";
 import {Typography,Paper,Divider,List, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
-// import { useMyContext } from "../context/Context";
 import "../../src/App.css";
-const Template_4 = () => {
-  //  In this Section We are Getting all data with the help  of useSelector which is stored in redux store like personalInfo Data , EducationData , WorkExperienceData and KeyskillData **************
 
-  // const { mode } = useMyContext();
+
+
+//  In this Section We are Getting all data with the help  of useSelector which is stored in redux store like personalInfo Data , EducationData , WorkExperienceData and KeyskillData **************
+
+const Template_4 = () => {
   const PersonalInfoData = useSelector(
     (state) => state.personalInfo.personalInfoValues
   );
