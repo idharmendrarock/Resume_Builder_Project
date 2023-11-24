@@ -15,87 +15,87 @@ Welcome to the Resume Builder Website project! This project is developed by Dhar
 
 ## Folder Structure
 
-├── public/
-│ ├── index.html
-│ ├──images/
-|   ├── About.png
-|   ├── About1.png
-|   ├── BgImg.jpg
-|   ├── BgImg1.jpg
-|   ├── MyResume.png
-|   ├── MyResume1.jpg
-|   ├── MyResume2.png
-|   ├── allmalogo.png
-|   ├── download.png
-│   ├── profile.jpg
-│   ├── titlelogo.png
-├──src/
-│ ├──Components/
-│   ├──FormsDetails/
-│          ├──Education.js
-│          ├──KeySkills.js
-│          ├──PersonalInfo.js
-│          ├──ProfileSection.js
-│          ├──WorkExperience.js
-│   ├──pages/
-│          ├──AboutUs.js
-│          ├──DetailsFilling.js
-│          ├──DrawerComp.js
-│          ├──MyResumes.js
-│          ├──style.css
-│   ├──Home.js
-│   ├──Main.js
-│   ├──Navbar.js
-│   ├──OnKeyPress.js
-│   ├──Preview.js
-│ ├──context/
-│   ├──Context.js
-│ ├──data/
-│   ├──Images/
-│          ├──Email.png
-│          ├──Github.png
-│          ├──LIn.png
-│          ├──fb.png
-│          ├──template-1.png
-│          ├──template-2.png
-│          ├──template-3.png
-│          ├──template-4.png
-│          ├──twt.png 
-│          ├──wApp.png
-│    ├──Data.js
-│ ├──Images/
-│   ├──BlueLines.png
-│   ├──download.png
-│   ├──profile.jpg
-│ ├──Redux/
-│   ├──actions/
-│          ├──EducationAction.js
-│          ├──KeySkillsActions.js
-│          ├──PersonalInfoAction.js
-│          ├──ProfileAction.js
-│          ├──SetTemplateAction.js
-│          ├──WorkExpAction.js
-│ ├──AtionsTypes/
-│    ├──ActionTypes.js
-│ ├──reducers/
-│    ├──EducationDetailsReducer.js
-│    ├──KeySkillsReducer.js
-│    ├──PersonalInfoReducer.js
-│    ├──ProfileInfoReducer.js
-│    ├──SetTemplateReducer.js
-│    ├──WorkExpReducer.js
-│ ├──Index.js
-│ ├──RootReducer.js
-│ ├──Store.js
-│ ├──templates/
-│    ├──Template_1.js
-│    ├──Template_2.js
-│    ├──Template_3.js
-│    ├──Template_4.js  
-│ ├──App.css
-│ ├──App.js
-│ ├──index.css
-│ ├──index.js
+# public
+* [images/](.\public\images)
+  * [About.png](.\public\images\About.png)
+  * [About1.png](.\public\images\About1.png)
+  * [allmalogo.png](.\public\images\allmalogo.png)
+  * [BgImg.jpg](.\public\images\BgImg.jpg)
+  * [BgImg1.jpg](.\public\images\BgImg1.jpg)
+  * [download.png](.\public\images\download.png)
+  * [MyResume.png](.\public\images\MyResume.png)
+  * [MyResume1.jpg](.\public\images\MyResume1.jpg)
+  * [MyResume2.png](.\public\images\MyResume2.png)
+  * [profile.jpg](.\public\images\profile.jpg)
+  * [titlelogo.png](.\public\images\titlelogo.png)
+* [index.html](.\public\index.html)
+# src
+* [components/](.\src\components)
+  * [formsDetails/](.\src\components\formsDetails)
+    * [Education.js](.\src\components\formsDetails\Education.js)
+    * [KeySkills.js](.\src\components\formsDetails\KeySkills.js)
+    * [PersonalInfo.js](.\src\components\formsDetails\PersonalInfo.js)
+    * [ProfileSection.js](.\src\components\formsDetails\ProfileSection.js)
+    * [WorkExperience.js](.\src\components\formsDetails\WorkExperience.js)
+  * [pages/](.\src\components\pages)
+    * [AboutUs.js](.\src\components\pages\AboutUs.js)
+    * [DetailsFilling.js](.\src\components\pages\DetailsFilling.js)
+    * [DrawerComp.js](.\src\components\pages\DrawerComp.js)
+    * [MyResumes.js](.\src\components\pages\MyResumes.js)
+    * [style.css](.\src\components\pages\style.css)
+  * [Home.js](.\src\components\Home.js)
+  * [Main.js](.\src\components\Main.js)
+  * [Navbar.js](.\src\components\Navbar.js)
+  * [OnKeyPress.js](.\src\components\OnKeyPress.js)
+  * [Preview.js](.\src\components\Preview.js)
+* [context/](.\src\context)
+  * [Context.js](.\src\context\Context.js)
+* [data/](.\src\data)
+  * [images/](.\src\data\images)
+    * [Email.png](.\src\data\images\Email.png)
+    * [fb.png](.\src\data\images\fb.png)
+    * [Github.png](.\src\data\images\Github.png)
+    * [LIn.png](.\src\data\images\LIn.png)
+    * [template-1.png](.\src\data\images\template-1.png)
+    * [template-2.png](.\src\data\images\template-2.png)
+    * [template-3.png](.\src\data\images\template-3.png)
+    * [template-4.png](.\src\data\images\template-4.png)
+    * [twt.png](.\src\data\images\twt.png)
+    * [wApp.png](.\src\data\images\wApp.png)
+  * [Data.js](.\src\data\Data.js)
+* [Images/](.\src\Images)
+  * [BlueLines.png](.\src\Images\BlueLines.png)
+  * [download.png](.\src\Images\download.png)
+  * [profile.jpg](.\src\Images\profile.jpg)
+* [Redux/](.\src\Redux)
+  * [actions/](.\src\Redux\actions)
+    * [EducationAction.js](.\src\Redux\actions\EducationAction.js)
+    * [KeySkillsActions.js](.\src\Redux\actions\KeySkillsActions.js)
+    * [PersonalInfoAction.js](.\src\Redux\actions\PersonalInfoAction.js)
+    * [ProfileAction.js](.\src\Redux\actions\ProfileAction.js)
+    * [SetTemplateAction.js](.\src\Redux\actions\SetTemplateAction.js)
+    * [WorkExpAction.js](.\src\Redux\actions\WorkExpAction.js)
+  * [actionsTypes/](.\src\Redux\actionsTypes)
+    * [ActionTypes.js](.\src\Redux\actionsTypes\ActionTypes.js)
+  * [reducers/](.\src\Redux\reducers)
+    * [EducationDetailsReducer.js](.\src\Redux\reducers\EducationDetailsReducer.js)
+    * [KeySkillsReducer.js](.\src\Redux\reducers\KeySkillsReducer.js)
+    * [PersonalInfoReducer.js](.\src\Redux\reducers\PersonalInfoReducer.js)
+    * [ProfileInfoReducer.js](.\src\Redux\reducers\ProfileInfoReducer.js)
+    * [SetTemplateReducer.js](.\src\Redux\reducers\SetTemplateReducer.js)
+    * [WorkExpReducer.js](.\src\Redux\reducers\WorkExpReducer.js)
+  * [Index.js](.\src\Redux\Index.js)
+  * [RootReducer.js](.\src\Redux\RootReducer.js)
+  * [Store.js](.\src\Redux\Store.js)
+* [templates/](.\src\templates)
+  * [Template_1.js](.\src\templates\Template_1.js)
+  * [Template_2.js](.\src\templates\Template_2.js)
+  * [Template_3.js](.\src\templates\Template_3.js)
+  * [Template_4.js](.\src\templates\Template_4.js)
+* [App.css](.\src\App.css)
+* [App.js](.\src\App.js)
+* [index.css](.\src\index.css)
+* [index.js](.\src\index.js)
 
 ## Features
 
